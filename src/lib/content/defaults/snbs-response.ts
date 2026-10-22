@@ -1,0 +1,47 @@
+export const SNBS_RESPONSE = {
+  hero: {
+    _label: "Hero",
+    image: "/images/snbs-response-hero.jpg",
+    imageAlt: "A mulched flower bed in front of a home",
+    eyebrow: "Our Response to the Bare Soil Challenge",
+    title: "Say No to",
+    titleAccent: "Bare Soil.",
+    subtitle: "Healthy soil deserves to be covered.",
+    paras: [
+      "Say No to Bare Soil is an EcoMulch campaign encouraging homeowners to notice the exposed soil around their homes and take practical steps to reduce it.",
+      "As our towns and cities grow, the choices we make in our compounds — in our flower beds, around trees and hedges, in our kitchen gardens and along pathways — can contribute to healthier plants, better-protected soil and greener, more sustainable urban communities.",
+    ],
+  },
+  movement: {
+    _label: "Building the movement",
+    eyebrow: "Building a Say No to Bare Soil Movement",
+    title: "Helping More People",
+    titleAccent: "Notice, Understand and Take Action.",
+    lede: "We are working to make bare soil more visible as a challenge and practical soil cover a normal part of how we landscape our homes and communities. Through our content, demonstrations, projects and partnerships, we aim to:",
+    aims: [
+      { _tone: "mint", icon: "binoculars", text: "Encourage more people to notice exposed soil." },
+      { _tone: "peach", icon: "lightbulb", text: "Help people understand why it matters." },
+      { _tone: "sky", icon: "sprout", text: "Share practical ways to reduce it." },
+      { _tone: "mint", icon: "people-round", text: "Partner with individuals and organizations to reach more homes and communities." },
+    ],
+    ctaTitle: "Want to help build the movement?",
+    ctaBody: "We welcome individuals and organizations who share our belief in healthier, better-protected soil. Let’s work together to take the Say No to Bare Soil campaign further.",
+    cta: "Explore ways to partner with us",
+    ctaHref: "/say-no-to-bare-soil/our-response/help-build-the-movement",
+  },
+  practice: {
+    _label: "Supporting homeowners",
+    eyebrow: "From Principle to Practice",
+    title: "Supporting Homeowners",
+    titleAccent: "to Reduce Bare Soil.",
+    lede: "Reducing bare soil does not mean covering every exposed area in exactly the same way. The right approach depends on what is growing there, how the space is used and what you are trying to achieve. We help homeowners explore practical solutions, including:",
+    solutions: [
+      { _tone: "peach", title: "Incorporate\nOrganic Mulch", body: "Organic mulch provides an effective way to cover exposed soil around established plants and in new planting areas. It helps conserve moisture, reduces weed growth, protects the soil from erosion and contributes organic matter as it breaks down.", image: "/images/snbs-response-mulch.jpg", imageAlt: "Flowering plants growing through a layer of organic mulch" },
+      { _tone: "sky", title: "Rethink\nthe Planting", body: "Sometimes bare soil remains because of how a space has been planted or how plants have developed over time. In these situations, it may make sense to reorganize the planting — for example, by adding appropriate low-growing vegetation — to create more continuous living cover.", image: "/images/snbs-response-planting.jpg", imageAlt: "A bed of dense, low-growing plants beside a brick path" },
+    ],
+    ctaTitle: "Have exposed soil around your home?",
+    ctaBody: "We work with homeowners to understand their space and identify a practical way forward — whether that includes incorporating organic mulch, improving planting, or a combination of both.",
+    cta: "Explore how we can help",
+    ctaHref: "/say-no-to-bare-soil/our-response/mulching-your-home",
+  },
+};

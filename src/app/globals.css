@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --header-h: 76px;
+  }
+  @media (min-width: 1024px) {
+    :root {
+      --header-h: 88px;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Anchor jumps land below the sticky header */
+    scroll-padding-top: var(--header-h);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-white text-ink-light font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    @apply bg-brand-200 text-ink;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-container px-5 sm:px-6 lg:px-10;
+  }
+
+  /* Same width and side margins as the site header, so page content lines up
+     with the logo on every screen size (header: px-5 → sm:px-6 → xl:px-10).
+     Used by the Recycling Green Waste and Greening Urban Spaces pages. */
+  .container-site {
+    @apply mx-auto w-full max-w-container px-5 sm:px-6 xl:px-10;
+  }
+
+  /* Narrower column used by the Who We Are sub-pages (matches mockup proportions) */
+  .container-narrow {
+    @apply mx-auto w-full max-w-page px-5 sm:px-8 lg:px-[60px];
+  }
+
+  /* Short green rule under section headings */
+  .rule {
+    @apply block h-[3px] w-10 rounded-full bg-brand-500;
+  }
+
+  /* Body copy on Who We Are pages: navy, relaxed */
+  .copy p {
+    @apply text-ink-light;
+  }
+
+  /* Eyebrow label with leaf icon */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-brand-600;
+  }
+
+  .link-underline {
+    @apply relative inline-flex items-center gap-2 font-semibold text-brand-600 transition-colors hover:text-brand-700;
+  }
+
+  .prose-eco p {
+    @apply leading-relaxed text-slate-600;
+  }
+  .prose-eco p + p {
+    @apply mt-4;
+  }
+}
+
+/* Fine dotted / patterned separators used under section headings */
+.rule-accent {
+  height: 3px;
+  width: 40px;
+  border-radius: 999px;
+  background: #1f9a4b;
+}
+
+/* Sub-page hero: near-black green on the left fading into the photo */
+.hero-split-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 12, 4, 0.94) 0%,
+    rgba(2, 12, 4, 0.86) 28%,
+    rgba(2, 12, 4, 0.55) 42%,
+    rgba(2, 12, 4, 0.12) 56%,
+    rgba(2, 12, 4, 0) 66%
+  );
+}
+
+/* Split hero: the photo occupies the right of the hero and dissolves into the
+   solid ground beside the text, so no copy ever sits on top of a busy image.
+   With the photo at 58% width, it stays fully transparent until ~48% of the
+   hero and is opaque from ~70% — the text column ends at ~52% at every
+   desktop width, so it only ever meets the faintest edge of the fade. */
+@media (min-width: 768px) {
+  /* Wider, gentler fade for the light photo heroes of the newer pages */
+  .mask-fade-left-soft {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.18) 16%, rgba(0, 0, 0, 0.7) 36%, #000 52%);
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.18) 16%, rgba(0, 0, 0, 0.7) 36%, #000 52%);
+  }
+  @media (max-width: 767px) {
+    .mask-fade-left-soft {
+      -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+      mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+    }
+  }
+
+  .mask-fade-left {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 10%, #000 48%);
+    mask-image: linear-gradient(90deg, transparent 0%, transparent 10%, #000 48%);
+  }
+}
+
+/* Coloured half of a two-tone hero headline */
+[data-tone="dark"] .hero-accent {
+  color: #7cd96f;
+}
+[data-tone="light"] .hero-accent {
+  color: #0b7d3e;
+}
+
+/* Landing hero: gentle darkening so the centred headline reads */
+.hero-team-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.12) 45%,
+    rgba(0, 0, 0, 0.32) 100%
+  );
+}
+
+.text-shadow-hero {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(9, 26, 15, 0.28) 0%,
+    rgba(9, 26, 15, 0.42) 45%,
+    rgba(9, 26, 15, 0.72) 100%
+  );
+}
+
+.hero-overlay-soft {
+  background: linear-gradient(
+    180deg,
+    rgba(9, 26, 15, 0.2) 0%,
+    rgba(9, 26, 15, 0.34) 55%,
+    rgba(9, 26, 15, 0.6) 100%
+  );
+}
