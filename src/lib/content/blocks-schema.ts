@@ -672,7 +672,7 @@ export const BLOCK_SCHEMAS: Record<string, BlockSchema> = {
     description: "Full-screen photo with the headline and the three section buttons.",
     scope: "home",
     fields: [
-      { key: "image", label: "Background photo", type: "image", help: "People and plants together in an urban/residential space works best." },
+      { key: "image", label: "Background photo", type: "image", help: "A mulched, planted bed in an urban or residential space works best." },
       { key: "imageAlt", label: "Photo description", type: "text" },
       { key: "title", label: "Headline", type: "textarea" },
       {
@@ -700,7 +700,7 @@ export const BLOCK_SCHEMAS: Record<string, BlockSchema> = {
       { key: "scrollLabel", label: "Scroll prompt", type: "text" },
     ],
     makeDefault: () => ({
-      image: "/images/home-hero.jpg",
+      image: "/images/home-hero-mulch.jpg",
       imageAlt: "",
       title: "Headline",
       buttons: [{ label: "About EcoMulch", target: "#about", tone: "cream", icon: "people" }],
@@ -715,7 +715,7 @@ export const BLOCK_SCHEMAS: Record<string, BlockSchema> = {
     scope: "home",
     fields: [
       { key: "anchor", label: "Section anchor", type: "text", help: "Used by the welcome-screen buttons, e.g. about." },
-      { key: "eyebrow", label: "Small label", type: "text" },
+      { key: "eyebrow", label: "Small label", type: "text", help: "Optional. Leave blank to make the heading the section title." },
       { key: "heading", label: "Heading", type: "textarea" },
       { key: "lead", label: "Opening statement", type: "textarea" },
       {
@@ -729,10 +729,12 @@ export const BLOCK_SCHEMAS: Record<string, BlockSchema> = {
       { key: "buttonHref", label: "Button link", type: "url" },
       { key: "image", label: "Photo", type: "image" },
       { key: "imageAlt", label: "Photo description", type: "text" },
+      { key: "continueLabel", label: "Continue prompt", type: "text", help: "Optional. Shown at the bottom, e.g. Continue to Our Work. Leave blank to end the page here." },
+      { key: "continueTarget", label: "Continue scrolls to", type: "text", help: "The next section's anchor, e.g. #our-work." },
     ],
     makeDefault: () => ({
       anchor: "about",
-      eyebrow: "About",
+      eyebrow: "",
       heading: "Heading",
       lead: "Opening statement.",
       paragraphs: [{ text: "A paragraph." }],
@@ -750,7 +752,7 @@ export const BLOCK_SCHEMAS: Record<string, BlockSchema> = {
     scope: "home",
     fields: [
       { key: "anchor", label: "Section anchor", type: "text", help: "e.g. our-work or our-solutions." },
-      { key: "eyebrow", label: "Small label", type: "text" },
+      { key: "eyebrow", label: "Small label", type: "text", help: "Optional. Leave blank to make the heading the section title." },
       { key: "heading", label: "Heading", type: "textarea" },
       { key: "intro", label: "Introduction", type: "textarea" },
       {
@@ -762,17 +764,18 @@ export const BLOCK_SCHEMAS: Record<string, BlockSchema> = {
         itemFields: [
           { key: "image", label: "Photo", type: "image" },
           { key: "imageAlt", label: "Photo description", type: "text" },
-          { key: "icon", label: "Icon", type: "icon" },
           { key: "title", label: "Title", type: "text" },
           { key: "body", label: "Description", type: "textarea" },
           { key: "linkLabel", label: "Link text", type: "text" },
           { key: "href", label: "Links to", type: "url" },
         ],
       },
+      { key: "continueLabel", label: "Continue prompt", type: "text", help: "Optional. Shown at the bottom, e.g. Continue to Our Work. Leave blank to end the page here." },
+      { key: "continueTarget", label: "Continue scrolls to", type: "text", help: "The next section's anchor, e.g. #our-work." },
     ],
     makeDefault: () => ({
       anchor: "section",
-      eyebrow: "Label",
+      eyebrow: "",
       heading: "Heading",
       intro: "A short introduction.",
       cards: [],

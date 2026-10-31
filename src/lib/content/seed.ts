@@ -9,10 +9,10 @@
 import type { Page, SiteSettings } from "./types";
 
 export const SEED_SETTINGS: SiteSettings = {
-  whatsappNumber: "254700000000",
+  whatsappNumber: "254740209770",
   whatsappMessage:
     "Hello EcoMulch, I'd like to learn more about sustainable urban greening.",
-  whatsappCatalogueUrl: "https://wa.me/c/254700000000",
+  whatsappCatalogueUrl: "https://wa.me/c/254740209770",
   flowerBedsYoutubeUrl: "https://www.youtube.com/",
   nav: [
     { label: "Home", href: "/" },
@@ -25,12 +25,12 @@ export const SEED_SETTINGS: SiteSettings = {
   footerTagline:
     "Turning everyday green waste into healthier soil, thriving plants and more liveable urban spaces in Kiambu and beyond.",
   location: "Kiambu, Kenya",
-  phone: "",
-  email: "",
-  instagramUrl: "",
-  linkedinUrl: "",
+  phone: "+254 740 209 770",
+  email: "inquiry@ecomulch.co.ke",
+  instagramUrl: "https://www.instagram.com/ecomulch.ke",
+  linkedinUrl: "https://www.linkedin.com/company/ecomulchke/",
   youtubeUrl: "",
-  facebookUrl: "",
+  facebookUrl: "https://www.facebook.com/share/12Dio55q9hD/",
 };
 
 export const SEED_PAGES: Record<string, Page> = {
@@ -43,9 +43,9 @@ export const SEED_PAGES: Record<string, Page> = {
         id: "home-landing",
         type: "home-landing",
         data: {
-          image: "/images/home-hero.jpg",
-          imageAlt: "A woman in an EcoMulch apron planting a mulched flower bed while a child waters potted plants nearby",
-          title: "Helping people and plants thrive together in urban spaces.",
+          image: "/images/home-hero-mulch.jpg",
+          imageAlt: "A flower bed of tropical shrubs and flowers, finished with a deep layer of bark mulch beside a paved edge",
+          title: "Turning everyday green waste into healthier soil, thriving plants and more livable urban spaces.",
           buttons: [
             { label: "About EcoMulch", target: "#about", tone: "cream", icon: "people" },
             { label: "Our Work", target: "#our-work", tone: "mint", icon: "leaf-outline" },
@@ -59,8 +59,8 @@ export const SEED_PAGES: Record<string, Page> = {
         type: "home-about",
         data: {
           anchor: "about",
-          eyebrow: "About EcoMulch",
-          heading: "A practical approach to greener urban spaces.",
+          eyebrow: "",
+          heading: "About EcoMulch",
           lead: "EcoMulch is a sustainable urban greening company based in Kiambu, Kenya.",
           paragraphs: [
             { text: "We explore practical ways to make urban spaces greener and healthier by recovering useful resources from green waste, protecting soil, and developing thoughtful solutions for growing plants in built-up environments." },
@@ -71,6 +71,8 @@ export const SEED_PAGES: Record<string, Page> = {
           buttonHref: "/who-we-are",
           image: "/images/home-about.jpg",
           imageAlt: "Three members of the EcoMulch team in green uniforms working with mulch in a raised bed",
+          continueLabel: "Continue to Our Work",
+          continueTarget: "#our-work",
         },
       },
       {
@@ -78,38 +80,37 @@ export const SEED_PAGES: Record<string, Page> = {
         type: "home-cards",
         data: {
           anchor: "our-work",
-          eyebrow: "Our Work",
-          heading: "Three connected priorities",
+          eyebrow: "",
+          heading: "Our Work",
           intro: "Our work is guided by three connected priorities that address real challenges and opportunities in today’s urban environments.",
           cards: [
             {
-              image: "/images/home-work-recycling.jpg",
+              image: "/images/home-work-recycling-clean.jpg",
               imageAlt: "A pile of fresh garden prunings and leaves",
-              icon: "recycle",
               title: "Recycling Green Waste",
               body: "Exploring how organic materials generated in urban areas can be recovered and transformed into useful resources.",
               linkLabel: "Learn more",
               href: "/recycling-green-waste",
             },
             {
-              image: "/images/home-work-soil.jpg",
+              image: "/images/home-work-soil-clean.jpg",
               imageAlt: "A leafy plant growing in mulched soil",
-              icon: "sprout",
               title: "Say No to Bare Soil",
               body: "Encouraging a different approach to landscaped spaces, where protecting exposed soil becomes a basic part of growing healthy plants.",
               linkLabel: "Learn more",
               href: "/say-no-to-bare-soil",
             },
             {
-              image: "/images/home-work-urban.jpg",
+              image: "/images/home-work-urban-clean.jpg",
               imageAlt: "A tree-lined, planted walkway beside apartment buildings",
-              icon: "tree",
               title: "Greening Urban Spaces",
               body: "Understanding the challenges and opportunities of growing plants in increasingly built-up environments.",
               linkLabel: "Learn more",
               href: "/greening-urban-spaces",
             },
           ],
+          continueLabel: "Continue to Our Solutions",
+          continueTarget: "#our-solutions",
         },
       },
       {
@@ -117,47 +118,35 @@ export const SEED_PAGES: Record<string, Page> = {
         type: "home-cards",
         data: {
           anchor: "our-solutions",
-          eyebrow: "Our Solutions",
-          heading: "Practical ways to bring more green into your spaces.",
+          eyebrow: "",
+          heading: "Our Solutions",
           intro: "We offer a range of practical solutions to help homes, businesses, institutions and communities create healthier, greener and more welcoming urban spaces.",
           cards: [
             {
-              image: "/images/home-sol-mulch.jpg",
+              image: "/images/home-sol-mulch-clean.jpg",
               imageAlt: "A plant growing through a layer of organic mulch",
-              icon: "leaf-outline",
               title: "Mulching Solutions",
               body: "Protect exposed soil and improve growing conditions with thoughtfully selected and installed organic mulch.",
               linkLabel: "Learn more",
               href: "/say-no-to-bare-soil/our-response/mulching-your-home",
             },
             {
-              image: "/images/home-sol-beds.jpg",
+              image: "/images/home-sol-beds-clean.jpg",
               imageAlt: "A flower bed full of pink and white flowers",
-              icon: "flower-outline",
               title: "Flower Bed Transformations",
               body: "Bring new life to ordinary or struggling flower beds through thoughtful design, plant selection and care.",
               linkLabel: "Learn more",
               href: "/greening-urban-spaces/what-we-offer/flower-beds",
             },
             {
-              image: "/images/home-sol-plants.jpg",
+              image: "/images/home-sol-plants-clean.jpg",
               imageAlt: "Potted indoor plants on a sunny patio",
-              icon: "plants",
               title: "Indoor & Patio Plants",
               body: "Discover curated plants and arrangements suited to your home, patio or balcony and growing conditions.",
               linkLabel: "Learn more",
               href: "/greening-urban-spaces/what-we-offer/curated-plants",
             },
           ],
-        },
-      },
-      {
-        id: "home-talk",
-        type: "home-talk",
-        data: {
-          heading: "Let’s talk about your space",
-          body: "We’d be happy to learn more about your ideas and explore how EcoMulch might help.",
-          buttonLabel: "Start a conversation",
         },
       },
     ],

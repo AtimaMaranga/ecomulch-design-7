@@ -29,19 +29,18 @@ function Heading({ children }: { children: React.ReactNode }) {
 
 const LINK = "text-[0.98rem] text-white/85 transition-colors hover:text-pine-mint";
 
-/** Faint leaf sprig in the footer's right-hand corner. */
+/** The leafy branch from the footer mockup, sitting in the right-hand corner. */
 function LeafWatermark() {
   return (
-    <svg
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/images/footer-leaf.png"
+      alt=""
       aria-hidden="true"
-      viewBox="0 0 220 300"
-      fill="currentColor"
-      className="pointer-events-none absolute -right-6 bottom-6 hidden h-[78%] w-auto text-white/[0.05] lg:block"
-    >
-      <path d="M120 10c60 40 90 120 60 190-18 42-58 64-88 66 4-90 4-170 28-256Z" />
-      <path d="M70 140c-40 10-70 50-66 100 36 6 72-10 88-42 10-20 2-46-22-58Z" />
-      <path d="M100 290c0-90 10-180 20-280" stroke="currentColor" strokeWidth="5" fill="none" />
-    </svg>
+      width={560}
+      height={988}
+      className="pointer-events-none absolute right-0 top-8 h-[22rem] w-auto opacity-[0.13] lg:bottom-[5%] lg:top-auto lg:h-[84%]"
+    />
   );
 }
 
@@ -166,7 +165,7 @@ export function SiteFooter({
         <div className="flex flex-col gap-3 border-t border-white/20 py-6 text-[0.9rem] text-white/80 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} EcoMulch. All rights reserved.</p>
           {/* Privacy Policy / Terms of Use links go here once those pages exist. */}
-          <a href={waUrl} target="_blank" rel="noopener noreferrer" className="hover:text-pine-mint">
+          <a href={email ? `mailto:${email}` : waUrl} {...(email ? {} : { target: "_blank", rel: "noopener noreferrer" })} className="hover:text-pine-mint">
             Contact
           </a>
         </div>

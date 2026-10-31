@@ -15,7 +15,7 @@ export const navItems: NavItem[] = [
 ];
 
 // Update with the real EcoMulch WhatsApp number.
-export const WHATSAPP_NUMBER = "254700000000";
+export const WHATSAPP_NUMBER = "254740209770";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   "Hello EcoMulch, I'd like to learn more about sustainable urban greening.",
 )}`;

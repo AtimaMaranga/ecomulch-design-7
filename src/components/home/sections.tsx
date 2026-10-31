@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowDown, ArrowRight, ChevronDown } from "lucide-react";
+import { LeafMark } from "@/components/logo";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import type { IconComponent } from "@/components/icons";
 
@@ -15,13 +16,41 @@ const SCREEN = "md:min-h-[calc(100svh-var(--header-h))]";
 
 /* ─────────────────────────── shared bits ─────────────────────────── */
 
-function Kicker({ children }: { children: React.ReactNode }) {
+function Kicker({ children }: { children?: React.ReactNode }) {
   return (
     <div>
       <span className="block h-[3px] w-14 rounded-full bg-pine" />
-      <p className="mt-5 text-[0.95rem] font-700 uppercase tracking-[0.03em] text-pine sm:text-[1.05rem]">
-        {children}
-      </p>
+      {children && (
+        <p className="mt-5 text-[0.95rem] font-700 uppercase tracking-[0.03em] text-pine sm:text-[1.05rem]">
+          {children}
+        </p>
+      )}
+    </div>
+  );
+}
+
+/** Section heading: sized as the section's title when there is no small label above it. */
+function headingClass(hasEyebrow: boolean) {
+  return hasEyebrow
+    ? "mt-3 text-[2.1rem] font-800 leading-[1.08] tracking-[-0.02em] text-pine-deep sm:text-[2.7rem] lg:text-[clamp(2.9rem,3.9vw,3.9rem)]"
+    : "mt-6 text-[2.6rem] font-800 leading-[1.04] tracking-[-0.025em] text-pine-deep sm:text-[3.4rem] lg:text-[clamp(3.6rem,4.6vw,5rem)]";
+}
+
+/** "Continue to …" prompt that guides the reader down to the next section. */
+function ContinueLink({ label, target }: { label?: string; target?: string }) {
+  if (!label || !target) return null;
+  return (
+    <div className="container-site flex items-center gap-5 pb-6 pt-2 md:pb-8">
+      <span aria-hidden="true" className="h-px flex-1 bg-pine-deep/20" />
+      <a
+        href={target}
+        className="group flex flex-col items-center gap-1.5 rounded-lg px-2 py-1 text-[1.1rem] font-800 text-pine transition-colors hover:text-pine-dark focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-pine/30 lg:text-[1.3rem]"
+      >
+        <LeafMark className="h-8 w-7 text-pine" />
+        {label}
+        <ArrowDown className="h-6 w-6 transition-transform group-hover:translate-y-0.5" strokeWidth={2.2} />
+      </a>
+      <span aria-hidden="true" className="h-px flex-1 bg-pine-deep/20" />
     </div>
   );
 }
@@ -89,7 +118,7 @@ export function HomeLanding({
       <div className="absolute inset-x-0 bottom-0 -z-10 h-1/3 bg-gradient-to-t from-black/35 to-transparent" />
 
       <div className="container-site flex flex-1 flex-col items-center justify-center pb-6 pt-12 text-center md:pt-16">
-        <h1 className="max-w-[16ch] text-[2.45rem] md:max-w-[8.7em] font-800 leading-[1.06] tracking-[-0.02em] !text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.45)] sm:text-[3.4rem] lg:text-[clamp(3.4rem,4.6vw,4.6rem)]">
+        <h1 className="max-w-[20ch] text-[2.1rem] font-800 leading-[1.08] tracking-[-0.02em] !text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.45)] sm:text-[2.9rem] md:max-w-[18em] lg:text-[clamp(2.9rem,3.75vw,4rem)]">
           {title}
         </h1>
         <span className="mt-6 block h-[3px] w-28 rounded-full bg-pine-mint" />
@@ -142,6 +171,8 @@ export function HomeAbout({
   buttonHref,
   image,
   imageAlt,
+  continueLabel,
+  continueTarget,
 }: {
   id: string;
   eyebrow: string;
@@ -152,40 +183,45 @@ export function HomeAbout({
   buttonHref: string;
   image: string;
   imageAlt: string;
+  continueLabel?: string;
+  continueTarget?: string;
 }) {
   return (
     <section id={id} className={`relative isolate flex flex-col overflow-hidden bg-cream ${SCREEN}`}>
-      {/* Mobile: the photo sits on top and fades into the cream content area. */}
-      <div className="relative h-72 w-full sm:h-96 md:absolute md:inset-y-0 md:right-0 md:-z-10 md:h-auto md:w-[58%]">
-        <Image src={image} alt={imageAlt} fill sizes="(max-width: 768px) 100vw, 58vw" className="object-cover object-[60%_center]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-55% to-cream md:hidden" />
-        <div className="absolute inset-0 hidden bg-gradient-to-r from-cream via-cream/60 via-25% to-transparent to-55% md:block" />
-      </div>
-      <LeafSpray className="-left-16 bottom-0 hidden h-72 w-auto -scale-x-100 text-pine/[0.05] md:block" />
+      <LeafSpray className="-left-16 bottom-0 -z-10 hidden h-72 w-auto -scale-x-100 text-pine/[0.05] md:block" />
+      <LeafSpray className="-right-10 bottom-0 -z-10 hidden h-56 w-auto text-pine/[0.05] md:block" />
 
-      <div className="container-site flex flex-1 items-center py-10 md:py-16">
-        <div className="max-w-[46rem] md:max-w-[52%]">
-          <Kicker>{eyebrow}</Kicker>
-          <h2 className="mt-3 text-[2.1rem] font-800 leading-[1.08] tracking-[-0.02em] text-pine-deep sm:text-[2.7rem] lg:text-[clamp(2.7rem,3.6vw,3.6rem)]">
-            {heading}
-          </h2>
-          <p className="mt-5 text-[1.2rem] font-800 leading-[1.3] text-pine-deep sm:text-[1.45rem] lg:text-[1.7rem]">
-            {lead}
-          </p>
-          <div className="mt-5 space-y-4 text-[1.04rem] leading-[1.5] text-ink-light sm:text-[1.15rem] lg:text-[1.28rem]">
-            {paragraphs.map((p) => (
-              <p key={p.slice(0, 20)}>{p}</p>
-            ))}
+      <div className="relative isolate flex flex-1 flex-col">
+        {/* Mobile: the photo sits on top and fades into the cream content area. */}
+        <div className="relative h-72 w-full sm:h-96 md:absolute md:inset-y-0 md:right-0 md:-z-10 md:h-auto md:w-[58%]">
+          <Image src={image} alt={imageAlt} fill sizes="(max-width: 768px) 100vw, 58vw" className="object-cover object-[60%_center]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent from-55% to-cream md:hidden" />
+          <div className="absolute inset-0 hidden bg-gradient-to-r from-cream via-cream/60 via-25% to-transparent to-55% md:block" />
+        </div>
+
+        <div className="container-site flex flex-1 items-center py-10 md:py-16">
+          <div className="max-w-[46rem] md:max-w-[52%]">
+            <Kicker>{eyebrow}</Kicker>
+            <h2 className={headingClass(Boolean(eyebrow))}>{heading}</h2>
+            <p className="mt-5 text-[1.2rem] font-800 leading-[1.3] text-pine-deep sm:text-[1.45rem] lg:text-[1.7rem]">
+              {lead}
+            </p>
+            <div className="mt-5 space-y-4 text-[1.04rem] leading-[1.5] text-ink-light sm:text-[1.15rem] lg:text-[1.28rem]">
+              {paragraphs.map((p) => (
+                <p key={p.slice(0, 20)}>{p}</p>
+              ))}
+            </div>
+            <Link
+              href={buttonHref}
+              className="group mt-8 inline-flex w-full items-center justify-center gap-4 rounded-full bg-pine px-9 py-4 text-[1.1rem] font-800 text-white shadow-md transition-colors hover:bg-pine-dark sm:w-auto lg:px-12 lg:py-5 lg:text-[1.35rem]"
+            >
+              {buttonLabel}
+              <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" strokeWidth={2.2} />
+            </Link>
           </div>
-          <Link
-            href={buttonHref}
-            className="group mt-8 inline-flex w-full items-center justify-center gap-4 rounded-full bg-pine px-9 py-4 text-[1.1rem] font-800 text-white shadow-md transition-colors hover:bg-pine-dark sm:w-auto lg:px-12 lg:py-5 lg:text-[1.35rem]"
-          >
-            {buttonLabel}
-            <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" strokeWidth={2.2} />
-          </Link>
         </div>
       </div>
+      <ContinueLink label={continueLabel} target={continueTarget} />
     </section>
   );
 }
@@ -195,7 +231,6 @@ export function HomeAbout({
 export type HomeCard = {
   image: string;
   imageAlt: string;
-  icon: IconComponent;
   title: string;
   body: string;
   linkLabel: string;
@@ -208,49 +243,45 @@ export function HomeCards({
   heading,
   intro,
   cards,
+  continueLabel,
+  continueTarget,
 }: {
   id: string;
   eyebrow: string;
   heading: string;
   intro: string;
   cards: HomeCard[];
+  continueLabel?: string;
+  continueTarget?: string;
 }) {
   return (
     <section id={id} className={`relative isolate flex flex-col overflow-hidden border-t border-pine/10 bg-sage ${SCREEN}`}>
       <LeafSpray className="-right-10 -top-6 -z-10 h-[26rem] w-auto text-pine/[0.06]" />
       <div className="container-site flex flex-1 flex-col justify-center py-12 md:py-14">
         <Kicker>{eyebrow}</Kicker>
-        <h2 className="mt-3 max-w-[22ch] text-[2.1rem] font-800 leading-[1.08] tracking-[-0.02em] text-pine-deep sm:text-[2.7rem] lg:text-[clamp(2.9rem,3.9vw,3.9rem)]">
-          {heading}
-        </h2>
+        <h2 className={`max-w-[22ch] ${headingClass(Boolean(eyebrow))}`}>{heading}</h2>
         <p className="mt-4 max-w-[62rem] text-[1.06rem] leading-[1.45] text-ink-light sm:text-[1.2rem] lg:text-[1.4rem]">
           {intro}
         </p>
 
         <ul className="mt-8 grid gap-5 md:grid-cols-3 md:gap-6">
           {cards.map((c) => {
-            const Icon = c.icon;
             return (
               <li key={c.href + c.title}>
                 <Link
                   href={c.href}
                   className="group flex h-full flex-col overflow-hidden rounded-2xl bg-[#fcfcfa] shadow-[0_2px_6px_rgba(12,36,27,0.05),0_14px_30px_-18px_rgba(12,36,27,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_10px_rgba(12,36,27,0.06),0_24px_40px_-20px_rgba(12,36,27,0.35)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-pine/40"
                 >
-                  <div className="relative">
-                    <div className="relative aspect-[486/222] overflow-hidden">
-                      <Image
-                        src={c.image}
-                        alt={c.imageAlt}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                      />
-                    </div>
-                    <span className="absolute -bottom-9 left-6 grid h-[76px] w-[76px] place-items-center rounded-full bg-[#fcfcfa] text-pine-deep shadow-[0_4px_12px_-4px_rgba(12,36,27,0.25)] lg:h-[92px] lg:w-[92px]">
-                      <Icon className="h-9 w-9 lg:h-11 lg:w-11" strokeWidth={1.9} />
-                    </span>
+                  <div className="relative aspect-[486/222] overflow-hidden">
+                    <Image
+                      src={c.image}
+                      alt={c.imageAlt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                    />
                   </div>
-                  <div className="flex flex-1 flex-col px-6 pb-6 pt-12 lg:px-8">
+                  <div className="flex flex-1 flex-col px-6 pb-6 pt-6 lg:px-8 lg:pt-7">
                     <h3 className="text-[1.4rem] font-800 leading-[1.15] tracking-[-0.01em] text-pine-deep lg:text-[1.75rem]">
                       {c.title}
                     </h3>
@@ -269,6 +300,7 @@ export function HomeCards({
           })}
         </ul>
       </div>
+      <ContinueLink label={continueLabel} target={continueTarget} />
     </section>
   );
 }

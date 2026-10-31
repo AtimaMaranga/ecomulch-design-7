@@ -79,7 +79,7 @@ export function BlockRenderer({
         <BlockView key={block.id} block={block} ctx={ctx} />
       ))}
       {/* Breathing room before the footer when the page doesn't end on the values strip. */}
-      {endSpacer && blocks.length > 0 && !["values-strip", "home-talk"].includes(blocks[blocks.length - 1].type) && (
+      {endSpacer && blocks.length > 0 && !["values-strip", "home-talk", "home-cards"].includes(blocks[blocks.length - 1].type) && (
         <div aria-hidden="true" className="h-16" />
       )}
     </>
@@ -631,7 +631,7 @@ function BlockView({ block, ctx }: { block: Block; ctx: RenderContext }) {
       }));
       return (
         <HomeLanding
-          image={s(d.image) || "/images/home-hero.jpg"}
+          image={s(d.image) || "/images/home-hero-mulch.jpg"}
           imageAlt={s(d.imageAlt)}
           title={s(d.title)}
           buttons={buttons}
@@ -652,6 +652,8 @@ function BlockView({ block, ctx }: { block: Block; ctx: RenderContext }) {
           buttonHref={s(d.buttonHref) || "/who-we-are"}
           image={s(d.image) || "/images/home-about.jpg"}
           imageAlt={s(d.imageAlt)}
+          continueLabel={s(d.continueLabel)}
+          continueTarget={s(d.continueTarget)}
         />
       );
 
@@ -663,14 +665,15 @@ function BlockView({ block, ctx }: { block: Block; ctx: RenderContext }) {
           heading={s(d.heading)}
           intro={s(d.intro)}
           cards={list<Record<string, string>>(d.cards).map((c) => ({
-            image: c.image || "/images/home-work-soil.jpg",
+            image: c.image || "/images/home-work-soil-clean.jpg",
             imageAlt: c.imageAlt || "",
-            icon: resolveIcon(c.icon) as unknown as IconComponent,
             title: c.title || "",
             body: c.body || "",
             linkLabel: c.linkLabel || "Learn more",
             href: c.href || "/",
           }))}
+          continueLabel={s(d.continueLabel)}
+          continueTarget={s(d.continueTarget)}
         />
       );
 
