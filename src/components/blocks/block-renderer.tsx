@@ -30,6 +30,8 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { IntroSection } from "@/components/ui/intro-section";
 import { resolveIcon } from "@/lib/content/icon-registry";
 import { HomeAbout, HomeCards, HomeLanding, HomeTalk } from "@/components/home/sections";
+import { ExploreHub, IntroHero } from "@/components/section/explore";
+import { rich } from "@/lib/content/rich";
 import type { IconComponent } from "@/components/icons";
 import type { Block } from "@/lib/content/types";
 
@@ -79,7 +81,7 @@ export function BlockRenderer({
         <BlockView key={block.id} block={block} ctx={ctx} />
       ))}
       {/* Breathing room before the footer when the page doesn't end on the values strip. */}
-      {endSpacer && blocks.length > 0 && !["values-strip", "home-talk", "home-cards"].includes(blocks[blocks.length - 1].type) && (
+      {endSpacer && blocks.length > 0 && !["values-strip", "home-talk", "home-cards", "explore-hub"].includes(blocks[blocks.length - 1].type) && (
         <div aria-hidden="true" className="h-16" />
       )}
     </>
@@ -458,6 +460,52 @@ function BlockView({ block, ctx }: { block: Block; ctx: RenderContext }) {
             </div>
           </div>
         </section>
+      );
+    }
+
+    case "intro-hero": {
+      const paragraphs = list<{ text?: string }>(d.paragraphs).filter((p) => p.text);
+      const photo = s(d.photo);
+      return (
+        <IntroHero
+          eyebrow={s(d.eyebrow) || undefined}
+          title={s(d.title)}
+          image={s(d.image) || "/images/gus3-hero.jpg"}
+          mobileImage={s(d.mobileImage) || undefined}
+          imageAlt={s(d.imageAlt)}
+          photo={photo === "edge" || photo === "framed" ? photo : "fade"}
+        >
+          {paragraphs.map((p, i) => (
+            <p key={i}>{rich(p.text, "font-800 text-pine-deep")}</p>
+          ))}
+        </IntroHero>
+      );
+    }
+
+    case "explore-hub": {
+      const icon = (n: unknown) => resolveIcon(s(n)) as unknown as IconComponent;
+      return (
+        <ExploreHub
+          title={s(d.heading)}
+          lede={s(d.lede) || undefined}
+          primary={{
+            icon: icon(d.challengeIcon),
+            title: s(d.challengeTitle),
+            body: s(d.challengeBody) || undefined,
+            href: s(d.challengeHref) || "/",
+          }}
+          group={{
+            icon: icon(d.groupIcon),
+            title: s(d.groupTitle),
+            body: s(d.groupBody) || undefined,
+            options: list<Record<string, string>>(d.options).map((o) => ({
+              icon: icon(o.icon),
+              title: o.title || "",
+              body: o.body || undefined,
+              href: o.href || "/",
+            })),
+          }}
+        />
       );
     }
 

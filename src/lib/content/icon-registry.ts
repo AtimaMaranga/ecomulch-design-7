@@ -55,8 +55,10 @@ import {
   UsersRound,
   Waves,
   Droplet,
+  SquarePlay,
   type LucideIcon,
 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import {
   UrbanizationIcon,
   ClimateIcon,
@@ -80,6 +82,14 @@ import {
   HeartOutlineIcon,
   HardscapesIcon,
   LearnAdaptIcon,
+  CityPlantIcon,
+  HandSproutIcon,
+  PottedPlantIcon,
+  FlowerStemIcon,
+  SproutSoilIcon,
+  LeafPairIcon,
+  BareSoilIcon,
+  TrowelIcon,
   type IconComponent,
 } from "@/components/icons";
 
@@ -159,6 +169,16 @@ export const ICONS: Record<string, AnyIcon> = {
   "flower-bed": FlowerBedIcon,
   approach: ApproachIcon,
   mulch: MulchIcon,
+  "city-plant": CityPlantIcon,
+  "hand-sprout": HandSproutIcon,
+  "potted-plant": PottedPlantIcon,
+  "flower-stem": FlowerStemIcon,
+  "sprout-soil": SproutSoilIcon,
+  "leaf-pair": LeafPairIcon,
+  "bare-soil": BareSoilIcon,
+  trowel: TrowelIcon,
+  video: SquarePlay,
+  whatsapp: WhatsAppIcon as unknown as IconComponent,
 };
 
 export const DEFAULT_ICON = "leaf";

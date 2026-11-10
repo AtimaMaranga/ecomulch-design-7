@@ -1,185 +1,103 @@
+/*
+ * Transforming Urban Flower Beds. Restructured in November 2026 (client
+ * revisions): plain-title hero, an "Explore, Learn & Discover" list that jumps
+ * to the sections, and a simplified challenges section without the Learn More
+ * panels. Renamed section keys keep older saved copies from overriding it.
+ */
 export const FLOWER_BEDS = {
-  "hero": {
+  "intro": {
     "_label": "Hero",
-    "image": "/images/fb2-hero.jpg",
-    "imageAlt": "A colourful flower bed with agapanthus and red flowers beside a brick edge",
-    "eyebrow": "What We Offer",
-    "title": "Transforming",
-    "titleAccent": "Urban Flower Beds",
-    "subtitle": "Creating healthier, more attractive flower beds that can thrive over time.",
+    "eyebrow": "Greening Urban Spaces / What We Offer",
+    "title": "Transforming Urban Flower Beds",
     "paras": [
       "As our towns and cities become more built up, the spaces around our homes where plants can grow in the ground are increasingly limited. That makes the flower beds we do have all the more valuable.",
-      "But having a flower bed does not automatically mean having a thriving flower bed. Even a small bed can present challenges — from the condition of the soil and the plants we choose, to how those plants are arranged, how exposed soil is managed and how the bed is cared for over time."
-    ]
+      "But having a flower bed does not automatically mean having a thriving flower bed. At EcoMulch, we work to create healthier, more attractive flower beds through thoughtful plant selection, improved growing conditions, soil protection and ongoing care."
+    ],
+    "image": "/images/fb3-hero.jpg",
+    "mobileImage": "/images/fb3-hero-m.jpg",
+    "imageAlt": "A mulched flower bed of pink, red and white daisies beside a paved edge"
   },
-  "challenges": {
-    "_label": "Common challenges (Learn More cards)",
-    "title": "Some of the challenges we commonly encounter include:",
-    "items": [
+  "explore": {
+    "_label": "Explore, Learn & Discover (links to the sections below)",
+    "title": "Explore, Learn & Discover",
+    "lede": "Learn about the challenges of creating successful flower beds, discover our approach, follow our transformations or explore working with us.",
+    "options": [
       {
         "_tone": "mint",
-        "image": "/images/fb2-ch-conditions.jpg",
-        "imageAlt": "Compacted, stony soil",
-        "title": "Growing Conditions",
-        "body": "Soil may be poor, compacted, low in organic matter or affected by previous construction and other activity.",
-        "detail": {
-          "image": "/images/fb2-ex-conditions.jpg",
-          "imageAlt": "A trowel loosening soil in a flower bed",
-          "title": "Growing Conditions",
-          "subtitle": "Getting the Bed Off to a Good Start",
-          "paras": [
-            "Healthy, attractive flower beds start with good growing conditions. In many urban homes, the soil in flower beds can be compacted, low in organic matter or affected by previous construction and other activities. Poor soil can limit root growth, reduce water infiltration and make it difficult for plants to establish and thrive.",
-            "As part of our service, we assess the existing soil and growing conditions and recommend what needs to change. This may include loosening compacted soil, improving soil structure and fertility, and incorporating organic material such as compost or mulch to create a better environment for your plants."
-          ],
-          "points": [
-            {
-              "_tone": "peach",
-              "icon": "mulch-pile",
-              "title": "Assess Soil Condition",
-              "body": "We look at compaction, texture, fertility, drainage and any constraints that may affect plant growth."
-            },
-            {
-              "_tone": "mint",
-              "icon": "sprout",
-              "title": "Improve the Soil",
-              "body": "We recommend and apply improvements such as organic matter, compost and mulch where needed."
-            },
-            {
-              "_tone": "sky",
-              "icon": "droplet",
-              "title": "Create Better Growing Conditions",
-              "body": "Healthier soil supports stronger roots, better moisture retention and more resilient plants."
-            }
-          ],
-          "footer": "Good growing conditions give your flower bed a stronger foundation, helping your plants establish and thrive over time."
-        }
+        "icon": "leaf-pair",
+        "title": "Understand\nthe Challenge",
+        "body": "Explore common issues that can make flower beds difficult to establish and maintain.",
+        "href": "#understand-the-challenge"
+      },
+      {
+        "_tone": "peach",
+        "icon": "layers",
+        "title": "Our\nApproach",
+        "body": "See our step-by-step approach to creating healthy, attractive and long-lasting flower beds.",
+        "href": "#our-approach"
+      },
+      {
+        "_tone": "lilac",
+        "icon": "video",
+        "title": "From Ordinary\nto Amazing",
+        "body": "Follow our real flower-bed transformations, learn what works and get ideas for your own space.",
+        "href": "#from-ordinary-to-amazing"
       },
       {
         "_tone": "mint",
-        "image": "/images/fb2-ch-selection.jpg",
-        "imageAlt": "Red flowers and dark foliage plants",
-        "title": "Plant Selection",
-        "body": "Plants may not be well suited to the available light, space, moisture conditions or other characteristics of the bed.",
-        "detail": {
-          "image": "/images/fb2-ex-selection.jpg",
-          "imageAlt": "Trays of flowering plants at a nursery",
-          "title": "Plant Selection",
-          "subtitle": "Choosing the Right Plants for Your Space",
-          "paras": [
-            "Choosing the right plants is an important step in creating a successful flower bed. With so many beautiful plants available, it can be overwhelming to know which ones will work well in your space.",
-            "Different plants have different needs. They vary in how much sunlight they require, how much water they need, how they grow and how they perform in our local conditions. A plant that looks attractive in a nursery may not thrive if it is not suited to the light, soil, moisture levels or space in your flower bed.",
-            "As part of our service, we help you select plants that are well suited to your space and growing conditions, and that can contribute to the look and feel you want for your home."
-          ],
-          "points": [
-            {
-              "_tone": "peach",
-              "icon": "sun",
-              "title": "Match Plants to Your Conditions",
-              "body": "We consider the amount of sunlight, moisture, soil conditions and other factors in your flower bed."
-            },
-            {
-              "_tone": "mint",
-              "icon": "sprout",
-              "title": "Select Suitable Plants",
-              "body": "We help you choose plants that are likely to grow well in your space and fit with your preferences and maintenance needs."
-            },
-            {
-              "_tone": "sky",
-              "icon": "flower",
-              "title": "Consider Plant Characteristics",
-              "body": "We look at how plants grow, their mature size and how they behave over time, so they remain healthy and attractive in your flower bed."
-            }
-          ],
-          "footer": "The right plants, in the right place, make it easier to create a flower bed that is healthy, attractive and can thrive over time."
-        }
-      },
-      {
-        "_tone": "mint",
-        "image": "/images/fb2-ch-arrangement.jpg",
-        "imageAlt": "A crowded bed of mixed flowering plants",
-        "title": "Plant Arrangement",
-        "body": "Plants may not be arranged to make the best use of a limited space, accommodate their mature size or create the desired effect.",
-        "detail": {
-          "image": "/images/fb2-ex-arrangement.jpg",
-          "imageAlt": "A layered flower bed beside a brick edge",
-          "title": "Plant Arrangement",
-          "subtitle": "Making the Best Use of Your Space",
-          "paras": [
-            "Thoughtful plant arrangement helps create a flower bed that is attractive, balanced and easy to maintain. It makes the best use of the space you have and allows plants to grow and thrive with less competition for light, water and nutrients.",
-            "In many home flower beds, plants are placed too close together, planted without considering their mature size, or arranged in a way that does not take full advantage of the available space. This can lead to some plants being shaded out, overcrowding, or a bed that looks untidy over time.",
-            "As part of our service, we consider the size and growth habit of different plants, how they can be combined across layers (for example groundcovers, mid-height flowers and taller accent plants) and how to create a layout that fits the space and the look you want to achieve."
-          ],
-          "points": [
-            {
-              "_tone": "mint",
-              "icon": "sprout",
-              "title": "Use the Available Space Effectively",
-              "body": "Arrange plants to suit the size and shape of the bed and make good use of the space."
-            },
-            {
-              "_tone": "peach",
-              "icon": "flower",
-              "title": "Combine Different Types of Plants",
-              "body": "Bring together groundcovers, flowering plants and accent plants to create a balanced and attractive look."
-            },
-            {
-              "_tone": "sky",
-              "icon": "sprout-trio",
-              "title": "Plan for Healthy Growth Over Time",
-              "body": "Allow enough space for plants to reach their mature size and continue to look good as they grow."
-            }
-          ],
-          "footer": "A well-arranged flower bed brings out the best in your plants and helps create a space that is beautiful, healthy and easy to maintain."
-        }
-      },
-      {
-        "_tone": "mint",
-        "image": "/images/fb2-ch-baresoil.jpg",
-        "imageAlt": "Young plants spaced out across bare soil",
-        "title": "Bare Soil",
-        "body": "Soil left exposed between and around plants can lose moisture, support weeds and leave the growing environment less protected.",
-        "detail": {
-          "image": "/images/fb2-ex-baresoil.jpg",
-          "imageAlt": "Flowering plants growing through a layer of bark mulch",
-          "title": "Bare Soil",
-          "subtitle": "Why It Matters and How to Protect It",
-          "paras": [
-            "Leaving soil exposed between and around plants is very common in urban flower beds. While it may not seem like a big issue at first, bare soil can quickly lead to a range of problems that make the bed more difficult to maintain and can affect the health and appearance of your plants.",
-            "Covering the soil with organic mulch, living groundcover or a combination of both helps create a more stable growing environment. It protects the soil, supports healthier plants and keeps your flower bed looking attractive for longer."
-          ],
-          "points": [
-            {
-              "_tone": "sky",
-              "icon": "droplet",
-              "title": "Better Moisture Retention",
-              "body": "Covered soil loses moisture more slowly, so you don’t need to water as often."
-            },
-            {
-              "_tone": "mint",
-              "icon": "sprout",
-              "title": "Fewer Weeds",
-              "body": "A layer of mulch or living groundcover helps suppress weed growth, saving you time and effort."
-            },
-            {
-              "_tone": "peach",
-              "icon": "mulch-pile",
-              "title": "Less Soil Splash and Erosion",
-              "body": "Covering the soil helps keep soil in place, reduces splash onto plants, walls and pathways, and minimizes erosion."
-            },
-            {
-              "_tone": "rose",
-              "icon": "flower",
-              "title": "Healthier Plants and a Neater Look",
-              "body": "A protected soil surface supports stronger roots, improves growing conditions and keeps your flower bed looking clean and well cared for."
-            }
-          ],
-          "footer": "Keeping the soil covered helps create a healthier, more resilient flower bed that is easier to maintain and more attractive over time."
-        }
+        "icon": "whatsapp",
+        "title": "Transform\nYour Flower Bed",
+        "body": "Have a flower bed you’d like to improve or create? Let’s talk about your space and how we can help.",
+        "href": "#transform-your-flower-bed"
       }
     ]
   },
+  "challenge": {
+    "_label": "Understand the Challenge",
+    "eyebrow": "Transforming Urban Flower Beds",
+    "title": "Understand the Challenge",
+    "intro": "Even a small flower bed can present real challenges — from the condition of the soil and the plants we choose, to how those plants are arranged, how exposed soil is managed and how the bed is cared for over time.",
+    "image": "/images/fb3-challenge.jpg",
+    "mobileImage": "/images/fb3-challenge-m.jpg",
+    "imageAlt": "Pink daisies in a freshly mulched flower bed beside a paved path",
+    "listTitle": "Some of the challenges we commonly encounter include:",
+    "items": [
+      {
+        "_tone": "peach",
+        "_color": "green",
+        "icon": "sprout-soil",
+        "title": "Growing Conditions",
+        "body": "Soil may be poor, compacted, low in organic matter or affected by previous construction and other activity."
+      },
+      {
+        "_tone": "mint",
+        "_color": "green",
+        "icon": "leaf-pair",
+        "title": "Plant Selection",
+        "body": "Plants may not be well suited to the available light, space, moisture conditions or other characteristics."
+      },
+      {
+        "_tone": "sky",
+        "_color": "green",
+        "icon": "sprout-trio",
+        "title": "Plant Arrangement",
+        "body": "Plants may not be arranged to make the best use of a limited space, accommodate their mature size or create the desired effect."
+      },
+      {
+        "_tone": "lilac",
+        "_color": "brown",
+        "icon": "bare-soil",
+        "title": "Bare Soil",
+        "body": "Soil left exposed between and around plants can lose moisture, support weeds and leave the growing environment less protected."
+      }
+    ],
+    "nextTitle": "Understanding the challenges is the first step.",
+    "nextBody": "EcoMulch takes a thoughtful, step-by-step approach to addressing these challenges and creating healthier, more attractive flower beds.",
+    "nextCta": "Explore Our Approach",
+    "nextHref": "#our-approach"
+  },
   "approach": {
-    "_label": "Our approach (six steps)",
+    "_label": "Our Approach (six steps)",
     "eyebrow": "Our Approach",
     "title": "Our Approach to",
     "titleAccent": "Transforming Flower Beds",
@@ -486,7 +404,7 @@ export const FLOWER_BEDS = {
     "ctaHref": "{flowerBedsVideo}"
   },
   "transform": {
-    "_label": "Have a flower bed? (WhatsApp card)",
+    "_label": "Transform Your Flower Bed (WhatsApp card)",
     "image": "/images/fb2-transform.jpg",
     "imageAlt": "A long flower bed with agapanthus and daisies along a paved walkway",
     "title": "Have a Flower Bed You’d Like to Transform?",
