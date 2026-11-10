@@ -70,6 +70,35 @@ const config: Config = {
           mint: "#5cd9b0",
         },
         cream: "#f6f5eb",
+        // Pale card grounds, icon discs and icon inks (GUS revisions, Nov 2026)
+        wash: {
+          mint: "#eef7ee",
+          "mint-deep": "#e3f1e4",
+          "mint-from": "#e6f3e8",
+          "mint-mid": "#eff7ef",
+          "mint-to": "#f7fbf7",
+          cream: "#fdf8e9",
+          "cream-deep": "#fbf2d9",
+          "cream-from": "#fdf7e4",
+          "cream-to": "#fefbf2",
+          peach: "#fdf3ea",
+          "peach-deep": "#fbe9d8",
+          sky: "#eaf4fa",
+          lilac: "#f4effb",
+        },
+        disc: {
+          mint: "#e3f3e4",
+          peach: "#fde9d6",
+          sky: "#ddf0fa",
+          lilac: "#efe6fb",
+          lime: "#ecf5d6",
+          cream: "#fbf2d9",
+        },
+        glyph: {
+          navy: "#1f3f8f",
+          purple: "#5b3aa8",
+          brown: "#5c2b17",
+        },
         sage: "#eff6e9",
         forest: {
           DEFAULT: "#0b3a2f",
@@ -94,6 +123,11 @@ const config: Config = {
         page: "1024px",
       },
       boxShadow: {
+        float: "0 2px 6px rgba(12, 36, 27, 0.05), 0 12px 28px -14px rgba(12, 36, 27, 0.22)",
+        lift: "0 10px 24px -14px rgba(12, 36, 27, 0.35)",
+        photo: "0 8px 22px -12px rgba(12, 36, 27, 0.45)",
+        go: "0 3px 8px -3px rgba(8, 105, 47, 0.55)",
+        hair: "0 1px 3px rgba(12, 36, 27, 0.05)",
         card: "0 1px 2px rgba(16, 40, 24, 0.04), 0 8px 24px -12px rgba(16, 40, 24, 0.18)",
         "card-hover":
           "0 2px 4px rgba(16, 40, 24, 0.06), 0 20px 40px -18px rgba(16, 40, 24, 0.28)",

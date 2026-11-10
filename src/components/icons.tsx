@@ -368,3 +368,110 @@ export function LeafFlourish({
     </svg>
   );
 }
+
+/* ── Icons from the November 2026 Greening Urban Spaces revisions ── */
+
+/** Sprout beside an apartment block — "Understanding the Challenge". */
+export function CityPlantIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M5 43h38" />
+      <path d="M25 43V16h14v27" />
+      <path d="M29.5 21.5h.01M34.5 21.5h.01M29.5 26.5h.01M34.5 26.5h.01M29.5 31.5h.01M34.5 31.5h.01" strokeWidth={3} />
+      <path d="M30 43v-6h4.5v6" />
+      <path d="M15 43V11" />
+      <path d="M15 13c-3-2.6-3.4-6.4-.4-9.6 3.2 2.8 3.4 6.8.4 9.6Z" />
+      <path d="M15 22c3.8-.6 6.6-3.4 7.2-7.6-4.2.4-7 3.2-7.2 7.6Z" />
+      <path d="M15 29c-4-.6-7.4-3.6-8.2-8.2 4.6.4 7.8 3.6 8.2 8.2Z" />
+      <path d="M15 37c3.6-.4 6.4-3 7-7-4 .4-6.8 3-7 7Z" />
+    </Svg>
+  );
+}
+
+/** Open hand holding a sprout — "Our Solutions". */
+export function HandSproutIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M4 35l5.6-4.8A7 7 0 0 1 14.2 28.5H25a3 3 0 0 1 0 6h-7" />
+      <path d="M18 34.5h8.6a6 6 0 0 0 4-1.5l7.8-7a2.8 2.8 0 0 1 3.9 4l-8.4 9A8 8 0 0 1 28 41.5H14.5L10 45" />
+      <path d="M25 28.5V15" />
+      <path d="M25 20c-1.4-4.6-5.4-7.2-10-6.8.6 4.8 4.6 7.4 10 6.8Z" />
+      <path d="M25 17.5c1.2-5 5.2-8 10.4-7.8-.4 5.2-4.6 8.2-10.4 7.8Z" />
+    </Svg>
+  );
+}
+
+/** Pot with a two-leaf stem — "Indoor & Patio Plants" / "Where we grow plants". */
+export function PottedPlantIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M11 26.5h26v5H11Z" />
+      <path d="M13.5 31.5l3 12h15l3-12" />
+      <path d="M24 26.5V17" />
+      <path d="M24 21c-2-5.4-6.6-8.2-12-7.8.6 5.4 5.2 8.4 12 7.8Z" />
+      <path d="M24 17c1.6-6 6.4-9.4 12.4-9.2-.4 6.2-5.4 9.6-12.4 9.2Z" />
+    </Svg>
+  );
+}
+
+/** A single flower with leaves — "Flower Bed Transformations". */
+export function FlowerStemIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <circle cx="24" cy="11.5" r="2.6" />
+      <path d="M24 8.9c-1.8-1.6-1.8-4.4 0-5.9 1.8 1.5 1.8 4.3 0 5.9ZM26.5 10.7c.5-2.3 2.9-3.7 5.2-3 -.3 2.4-2.6 3.8-5.2 3ZM25.6 14c2.3.4 3.6 2.8 2.8 5-2.3-.4-3.6-2.7-2.8-5ZM22.4 14c.8 2.2-.5 4.6-2.8 5-.8-2.2.5-4.6 2.8-5ZM21.5 10.7c-2.6.8-4.9-.6-5.2-3 2.3-.7 4.7.7 5.2 3Z" />
+      <path d="M24 14.5V43" />
+      <path d="M24 33c-1.2-5-5.4-8-10.6-7.6.6 5.2 5 8.2 10.6 7.6Z" />
+      <path d="M24 33c1.2-5 5.4-8 10.6-7.6-.6 5.2-5 8.2-10.6 7.6Z" />
+      <path d="M14 43h20" />
+      <path d="M9 20.5a2 2 0 1 0 0-.01ZM39 20.5a2 2 0 1 0 0-.01Z" />
+    </Svg>
+  );
+}
+
+/** Seedling on a mound of soil — "Growing Conditions". */
+export function SproutSoilIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M5 37c5-5.4 11.4-7.6 19-7.6S38 31.6 43 37" />
+      <path d="M10 42h.01M17 41h.01M24 42h.01M31 41h.01M38 42h.01" strokeWidth={3} />
+      <path d="M24 29.5V17" />
+      <path d="M24 22c-1.6-4.8-5.6-7.4-10.4-7 .6 4.8 4.6 7.6 10.4 7Z" />
+      <path d="M24 19.5c1.4-5 5.4-8 10.6-7.6-.4 5.2-4.8 8-10.6 7.6Z" />
+    </Svg>
+  );
+}
+
+/** Two leaves opening from one stem — "Plant Selection". */
+export function LeafPairIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M24 43V25" />
+      <path d="M24 27c-.8-8.4-6.6-14-15.4-14.4.2 8.6 6.2 14.2 15.4 14.4Z" />
+      <path d="M24 27c.8-8.4 6.6-14 15.4-14.4-.2 8.6-6.2 14.2-15.4 14.4Z" />
+      <path d="M24 27l-8-7.4M24 27l8-7.4" />
+    </Svg>
+  );
+}
+
+/** Wavy soil layers with loose particles — "Bare Soil". */
+export function BareSoilIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M5 15c3.2-2.6 6.4-2.6 9.6 0s6.4 2.6 9.6 0 6.4-2.6 9.6 0 6.4 2.6 9.6 0" />
+      <path d="M5 22c3.2-2.6 6.4-2.6 9.6 0s6.4 2.6 9.6 0 6.4-2.6 9.6 0 6.4 2.6 9.6 0" />
+      <path d="M9 29.5h.01M17 31h.01M25 29.5h.01M33 31h.01M40 29.5h.01M13 37h.01M21 36h.01M29 37h.01M37 36h.01" strokeWidth={3} />
+    </Svg>
+  );
+}
+
+/** Hand trowel — "Ongoing Care". */
+export function TrowelIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M6.6 41.4a3.2 3.2 0 0 1 0-4.5l7.6-7.6 4.5 4.5-7.6 7.6a3.2 3.2 0 0 1-4.5 0Z" />
+      <path d="M16.5 31.5l4-4" />
+      <path d="M19.5 25.5L33 12c2.8-2.8 6.8-3.4 9-1.2s1.6 6.2-1.2 9L27.3 33.3a2 2 0 0 1-2.8 0l-5-5a2 2 0 0 1 0-2.8Z" />
+    </Svg>
+  );
+}

@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Greening Urban Spaces",
   description:
-    "Helping people and plants thrive together in urban spaces — better growing environments and thoughtful ways of bringing plants into homes, workplaces and outdoor spaces.",
+    "Practical ways to bring more living green into the places where people live and work: flower bed transformations, indoor and patio plants, and guidance on growing plants in built-up environments.",
 };
 
 export default async function GreeningUrbanSpacesPage() {
