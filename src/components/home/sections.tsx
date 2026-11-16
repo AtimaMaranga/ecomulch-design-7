@@ -229,6 +229,8 @@ export function HomeAbout({
 /* ─────────────────────────── 3 & 4 · card sections ─────────────────────────── */
 
 export type HomeCard = {
+  /** Optional pillar heading; cards sharing one are shown together, two per row. */
+  group?: string;
   image: string;
   imageAlt: string;
   title: string;
@@ -236,6 +238,39 @@ export type HomeCard = {
   linkLabel: string;
   href: string;
 };
+
+/** One linked card in the homepage "Our Work" / "Our Solutions" grids. */
+function CardLink({ c, wide = false }: { c: HomeCard; wide?: boolean }) {
+  return (
+    <Link
+      href={c.href}
+      className="group flex h-full flex-col overflow-hidden rounded-2xl bg-[#fcfcfa] shadow-[0_2px_6px_rgba(12,36,27,0.05),0_14px_30px_-18px_rgba(12,36,27,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_10px_rgba(12,36,27,0.06),0_24px_40px_-20px_rgba(12,36,27,0.35)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-pine/40"
+    >
+      <div className={`relative overflow-hidden ${wide ? "aspect-[539/230]" : "aspect-[486/222]"}`}>
+        <Image
+          src={c.image}
+          alt={c.imageAlt}
+          fill
+          sizes={wide ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 33vw"}
+          className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+        />
+      </div>
+      <div className="flex flex-1 flex-col px-6 pb-6 pt-6 lg:px-8 lg:pt-7">
+        <h3 className="text-[1.4rem] font-800 leading-[1.15] tracking-[-0.01em] text-pine-deep lg:text-[1.75rem]">
+          {c.title}
+        </h3>
+        <p className="mt-3 flex-1 text-[1rem] leading-[1.45] text-ink-light lg:text-[1.2rem]">
+          {c.body}
+        </p>
+        <span className="mt-5 flex items-center gap-3 text-[1.05rem] font-800 text-pine lg:text-[1.3rem]">
+          {c.linkLabel}
+          <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1 lg:h-6 lg:w-6" strokeWidth={2.2} />
+          <span className="sr-only">about {c.title}</span>
+        </span>
+      </div>
+    </Link>
+  );
+}
 
 export function HomeCards({
   id,
@@ -254,6 +289,16 @@ export function HomeCards({
   continueLabel?: string;
   continueTarget?: string;
 }) {
+  const grouped = cards.some((c) => c.group?.trim());
+  const groups = grouped
+    ? cards.reduce<{ name: string; cards: HomeCard[] }[]>((acc, c) => {
+        const name = c.group?.trim() || "";
+        const last = acc[acc.length - 1];
+        if (last && last.name === name) last.cards.push(c);
+        else acc.push({ name, cards: [c] });
+        return acc;
+      }, [])
+    : null;
   return (
     <section id={id} className={`relative isolate flex flex-col overflow-hidden border-t border-pine/10 bg-sage ${SCREEN}`}>
       <LeafSpray className="-right-10 -top-6 -z-10 h-[26rem] w-auto text-pine/[0.06]" />
@@ -264,41 +309,33 @@ export function HomeCards({
           {intro}
         </p>
 
-        <ul className="mt-8 grid gap-5 md:grid-cols-3 md:gap-6">
-          {cards.map((c) => {
-            return (
+        {groups ? (
+          <div className="mt-8 space-y-9 md:mt-10 md:space-y-12">
+            {groups.map((g) => (
+              <div key={g.name}>
+                <h3 className="flex items-center gap-4 text-[1.55rem] font-800 leading-[1.1] tracking-[-0.02em] text-pine-deep sm:gap-6 sm:text-[2rem] lg:text-[2.5rem]">
+                  <span aria-hidden="true" className="h-[3px] w-10 shrink-0 rounded-full bg-pine sm:w-14" />
+                  {g.name}
+                </h3>
+                <ul className="mt-5 grid gap-5 md:grid-cols-2 md:gap-6">
+                  {g.cards.map((c) => (
+                    <li key={c.href + c.title}>
+                      <CardLink c={c} wide />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <ul className="mt-8 grid gap-5 md:grid-cols-3 md:gap-6">
+            {cards.map((c) => (
               <li key={c.href + c.title}>
-                <Link
-                  href={c.href}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl bg-[#fcfcfa] shadow-[0_2px_6px_rgba(12,36,27,0.05),0_14px_30px_-18px_rgba(12,36,27,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_10px_rgba(12,36,27,0.06),0_24px_40px_-20px_rgba(12,36,27,0.35)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-pine/40"
-                >
-                  <div className="relative aspect-[486/222] overflow-hidden">
-                    <Image
-                      src={c.image}
-                      alt={c.imageAlt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col px-6 pb-6 pt-6 lg:px-8 lg:pt-7">
-                    <h3 className="text-[1.4rem] font-800 leading-[1.15] tracking-[-0.01em] text-pine-deep lg:text-[1.75rem]">
-                      {c.title}
-                    </h3>
-                    <p className="mt-3 flex-1 text-[1rem] leading-[1.45] text-ink-light lg:text-[1.2rem]">
-                      {c.body}
-                    </p>
-                    <span className="mt-5 flex items-center gap-3 text-[1.05rem] font-800 text-pine lg:text-[1.3rem]">
-                      {c.linkLabel}
-                      <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1 lg:h-6 lg:w-6" strokeWidth={2.2} />
-                      <span className="sr-only">about {c.title}</span>
-                    </span>
-                  </div>
-                </Link>
+                <CardLink c={c} />
               </li>
-            );
-          })}
-        </ul>
+            ))}
+          </ul>
+        )}
       </div>
       <ContinueLink label={continueLabel} target={continueTarget} />
     </section>

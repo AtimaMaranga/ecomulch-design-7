@@ -63,7 +63,7 @@ export const JOURNEY_SUGARCANE = {
       _aspect: "aspect-[403/173]",
       title: "We experimented — and found a use",
       paras: [
-        "We began shredding and processing the peels and eventually developed what we call [Miwa Mulch](/say-no-to-bare-soil).",
+        "We began shredding and processing the peels and eventually developed what we call [Miwa Mulch](/organic-soil-cover/our-response/organic-mulches/miwa-mulch).",
         "Continued use taught us that Miwa isn’t a mulch for every situation. Its decomposition characteristics make it particularly useful as a transitional soil cover — for example, while grass, seedlings or living groundcover become established.",
       ],
       image: "/images/miwa-experiment.jpg",

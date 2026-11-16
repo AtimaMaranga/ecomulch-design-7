@@ -1,8 +1,9 @@
 /*
  * The Urban Greening Challenge. Restructured in November 2026 (client
- * revisions): a plain-title hero, an "Explore the Challenge" list that jumps
- * to the three sections, then the sections themselves. Section keys were
- * renamed with the restructure so older saved copies can't override it.
+ * revisions): a plain-title hero followed directly by the three sections
+ * (the "Explore the Challenge" links were removed again on 2026-11-12 at the
+ * client's request). Section keys were renamed with the restructure so older
+ * saved copies can't override it.
  */
 export const GUS_CHALLENGE = {
   intro: {
@@ -11,21 +12,11 @@ export const GUS_CHALLENGE = {
     title: "The Urban Greening Challenge",
     paras: [
       "Buildings, roads, parking areas and other hard surfaces are occupying more of the spaces around us. Yet people are finding ways to bring plants into the places where they live — in their homes and compounds, on balconies and patios, and wherever space can be found.",
-      "**But finding room for plants is only one part of the challenge. Creating the conditions for those plants to thrive is another.**",
+      "**But finding room for plants is only part of the challenge. Creating the conditions for those plants to thrive is another.**",
     ],
     image: "/images/gusc3-hero.jpg",
     mobileImage: "/images/gusc3-hero-m.jpg",
     imageAlt: "A sunny balcony with a wicker chair and flowering potted plants, apartment blocks behind",
-  },
-  explore: {
-    _label: "Explore the Challenge (links to the sections below)",
-    title: "Explore the Challenge",
-    lede: "Discover the two growing situations we face and what plants need to thrive in built-up environments.",
-    options: [
-      { _tone: "mint", icon: "potted-plant", title: "Where we grow plants", href: "#where-we-grow-plants" },
-      { _tone: "cream", icon: "hand-sprout", title: "What growing plants requires", href: "#what-growing-plants-requires" },
-      { _tone: "mint", icon: "city-plant", title: "How EcoMulch is responding", href: "#how-ecomulch-is-responding" },
-    ],
   },
   growing: {
     _label: "Where we grow plants",

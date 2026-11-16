@@ -475,3 +475,81 @@ export function TrowelIcon(p: IconProps) {
     </Svg>
   );
 }
+
+/* ── Icons from the November 2026 Organic Soil Cover mockups ── */
+
+/** Grass tufts — Miwa Mulch. */
+export function GrassIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M6 42h36" />
+      <path d="M12 42c0-9-2.4-16-6-21 5.4 3.6 8.4 10.6 9 21" />
+      <path d="M17 42c0-11 .8-20 4-28 1.8 8 2 17 1.4 28" />
+      <path d="M24 42c.4-10 3-18.6 8.6-25-2 7.4-3 15.6-3 25" />
+      <path d="M31 42c1.4-7.6 4.6-13.6 10-17.4-3.2 5-5 10.8-5.6 17.4" />
+      <path d="M21.6 42c-1.4-6.4-4-11.6-8-15.4" />
+    </Svg>
+  );
+}
+
+/** Coconut half — Coco Mulch / Coco Chips. */
+export function CoconutIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <ellipse cx="24" cy="24" rx="17" ry="15" />
+      <path d="M8.5 30c6.6 4.4 17.6 5 26.4-.6" />
+      <path d="M14 15.5c3.4-2.6 8-3.6 12.4-2.8" />
+      <path d="M30.5 19.5h.01M27 23h.01M23.5 26.5h.01" strokeWidth={3} />
+    </Svg>
+  );
+}
+
+/** Pine cone — Pine Cone Flakes. */
+export function PineConeIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M24 3v5" />
+      <path d="M24 8c-6.6 0-11 5.4-11 12.6C13 31 18.6 41 24 45c5.4-4 11-14 11-24.4C35 13.4 30.6 8 24 8Z" />
+      <path d="M14.6 16.4c3 2 6 2.4 9.4.6 3.4 1.8 6.4 1.4 9.4-.6" />
+      <path d="M13.2 23.6c3.4 2.4 7 2.8 10.8.6 3.8 2.2 7.4 1.8 10.8-.6" />
+      <path d="M14.6 31c3 2.2 6.2 2.6 9.4.6 3.2 2 6.4 1.6 9.4-.6" />
+      <path d="M18.4 38c1.8 1.2 3.8 1.4 5.6.2 1.8 1.2 3.8 1 5.6-.2" />
+    </Svg>
+  );
+}
+
+/** Coiled fibre — Coco Fiber. */
+export function FiberCoilIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <circle cx="24" cy="24" r="19" />
+      <circle cx="24" cy="24" r="14.5" />
+      <circle cx="24" cy="24" r="10" />
+      <circle cx="24" cy="24" r="5.5" />
+      <path d="M24 18.5c2.4 1.4 3.6 3.4 3.4 6" />
+    </Svg>
+  );
+}
+
+/** Strip of bark — Bark Fiber. */
+export function BarkSlabIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M6 30.5 30.5 12c3.2-2.4 8-1.6 10.2 1.6s1.4 7.6-1.8 10L14.4 42c-3.2 2.4-7.8 1.6-10-1.6S2.8 32.8 6 30.5Z" />
+      <path d="M6.4 35.6 31 17.2M9.4 39.4 34 21" />
+      <path d="M17 27.6l4-3M25.2 25.4l3.6-2.6" />
+    </Svg>
+  );
+}
+
+/** Tied sack — packaging. */
+export function SackIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M17 9.5c4.6 2 9.4 2 14 0" />
+      <path d="M16 6.5c1.6 2.6 1.6 4.6.4 6.4M32 6.5c-1.6 2.6-1.6 4.6-.4 6.4" />
+      <path d="M17.6 13c-6.6 3.6-10.6 10.4-10.6 17.6C7 38.6 13.4 43 24 43s17-4.4 17-12.4c0-7.2-4-14-10.6-17.6" />
+      <path d="M17.6 13h12.8" />
+    </Svg>
+  );
+}

@@ -431,7 +431,7 @@ export function ArticleEditor({
                 <Text label="Button text" value={a.explore.cta} onChange={(v) => set("explore", { ...a.explore!, cta: v })} />
                 <Text
                   label="Button link"
-                  help="e.g. /say-no-to-bare-soil/our-response"
+                  help="e.g. /organic-soil-cover/our-response"
                   value={a.explore.href}
                   onChange={(v) => set("explore", { ...a.explore!, href: v })}
                 />

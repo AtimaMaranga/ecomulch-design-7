@@ -843,6 +843,7 @@ export const BLOCK_SCHEMAS: Record<string, BlockSchema> = {
         itemLabel: "card",
         maxItems: 3,
         itemFields: [
+          { key: "group", label: "Group heading (optional)", type: "text", help: "Cards with the same group appear together under that heading, two per row. Leave every card blank for a single row of cards." },
           { key: "image", label: "Photo", type: "image" },
           { key: "imageAlt", label: "Photo description", type: "text" },
           { key: "title", label: "Title", type: "text" },

@@ -95,6 +95,8 @@ const config: Config = {
           cream: "#fbf2d9",
         },
         glyph: {
+          amber: "#b07a10",
+          red: "#e62117",
           navy: "#1f3f8f",
           purple: "#5b3aa8",
           brown: "#5c2b17",

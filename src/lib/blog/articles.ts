@@ -71,7 +71,7 @@ export const SEED_ARTICLES: Article[] = [
       heading: "Interested in protecting the soil in your garden?",
       body: "Discover EcoMulch’s approach to creating healthier, well-covered soil using organic mulch, living groundcovers or both.",
       cta: "Explore Our Soil Cover Solutions",
-      href: "/say-no-to-bare-soil/our-response",
+      href: "/organic-soil-cover/our-response",
     },
     // The related articles shown in the mockup are not published yet, so the
     // module stays hidden until they are (see visibleContinue()).

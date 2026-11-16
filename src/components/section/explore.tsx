@@ -118,14 +118,14 @@ export function Kicker({ children, className = "" }: { children: React.ReactNode
       <p className="text-[0.92rem] font-800 uppercase tracking-[0.02em] text-brand-600 sm:text-[1rem] xl:text-[1.1rem]">
         {children}
       </p>
-      <span aria-hidden="true" className="mt-3 block h-[4px] w-16 rounded-full bg-brand-600 xl:w-[4.5rem]" />
+      <span aria-hidden="true" className="mt-3 block h-1 w-16 rounded-full bg-brand-600 xl:w-[4.5rem]" />
     </div>
   );
 }
 
 /** Green rule under a section title. */
 export function TitleRule({ className = "" }: { className?: string }) {
-  return <span aria-hidden="true" className={`block h-[4px] w-[4.5rem] rounded-full bg-brand-600 xl:w-24 ${className}`} />;
+  return <span aria-hidden="true" className={`block h-1 w-[4.5rem] rounded-full bg-brand-600 xl:w-24 ${className}`} />;
 }
 
 /** Large deep-green section heading. */

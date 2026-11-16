@@ -7,10 +7,18 @@ import { WHO_WHY } from "./who-why";
 import { WHO_PRINCIPLES } from "./who-principles";
 import { RGW_CHALLENGE } from "./rgw-challenge";
 import { JOURNEY_COCONUT, JOURNEY_PINE, JOURNEY_SHARED, JOURNEY_SUGARCANE } from "./journey";
-import { SNBS_CHALLENGE } from "./snbs-challenge";
-import { SNBS_RESPONSE } from "./snbs-response";
-import { SNBS_MOVEMENT } from "./snbs-movement";
-import { SNBS_MULCHING } from "./snbs-mulching";
+import {
+  MULCH_PRODUCTS,
+  OSC_CAMPAIGN,
+  OSC_CHALLENGE,
+  OSC_LANDING,
+  OSC_MULCHES,
+  OSC_MULCH_START,
+  OSC_RESPONSE,
+  OSC_TOPPINGS,
+  OSC_TOPPING_START,
+  TOPPING_PRODUCTS,
+} from "./organic-soil-cover";
 import { GUS_CHALLENGE } from "./gus-challenge";
 import { GUS_OFFER } from "./gus-offer";
 import { CURATED_PLANTS } from "./curated-plants";
@@ -25,10 +33,20 @@ export const CONTENT_DEFAULTS: Record<string, Record<string, unknown>> = {
   "recycling-green-waste--our-journey--sugarcane-peels": JOURNEY_SUGARCANE,
   "recycling-green-waste--our-journey--green-coconut-husks": JOURNEY_COCONUT,
   "recycling-green-waste--our-journey--pine-bark": JOURNEY_PINE,
-  "say-no-to-bare-soil--the-challenge": SNBS_CHALLENGE,
-  "say-no-to-bare-soil--our-response": SNBS_RESPONSE,
-  "say-no-to-bare-soil--our-response--help-build-the-movement": SNBS_MOVEMENT,
-  "say-no-to-bare-soil--our-response--mulching-your-home": SNBS_MULCHING,
+  "organic-soil-cover": OSC_LANDING,
+  "organic-soil-cover--the-challenge": OSC_CHALLENGE,
+  "organic-soil-cover--our-response": OSC_RESPONSE,
+  "organic-soil-cover--our-response--organic-mulches": OSC_MULCHES,
+  "organic-soil-cover--our-response--organic-mulches--getting-started": OSC_MULCH_START,
+  ...Object.fromEntries(
+    Object.entries(MULCH_PRODUCTS).map(([k, v]) => [`organic-soil-cover--our-response--organic-mulches--${k}`, v]),
+  ),
+  "organic-soil-cover--our-response--planter-toppings": OSC_TOPPINGS,
+  "organic-soil-cover--our-response--planter-toppings--getting-started": OSC_TOPPING_START,
+  ...Object.fromEntries(
+    Object.entries(TOPPING_PRODUCTS).map(([k, v]) => [`organic-soil-cover--our-response--planter-toppings--${k}`, v]),
+  ),
+  "organic-soil-cover--our-response--say-no-to-bare-soil": OSC_CAMPAIGN,
   "greening-urban-spaces--the-challenge": GUS_CHALLENGE,
   "greening-urban-spaces--what-we-offer": GUS_OFFER,
   "greening-urban-spaces--what-we-offer--curated-plants": CURATED_PLANTS,

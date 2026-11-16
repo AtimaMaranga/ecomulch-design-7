@@ -48,6 +48,7 @@ export function linkFor(
     whatsappCatalogueUrl?: string;
     youtubeUrl?: string;
     flowerBedsYoutubeUrl?: string;
+    snbsPlaylistUrl?: string;
   },
 ): string {
   switch (href.trim()) {
@@ -59,6 +60,8 @@ export function linkFor(
       return s.youtubeUrl || "https://www.youtube.com/";
     case "{flowerBedsVideo}":
       return s.flowerBedsYoutubeUrl || s.youtubeUrl || "https://www.youtube.com/";
+    case "{snbsPlaylist}":
+      return s.snbsPlaylistUrl || s.youtubeUrl || "";
     default:
       return href;
   }
