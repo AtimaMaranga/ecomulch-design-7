@@ -25,6 +25,7 @@ export async function PUT(req: Request) {
     whatsappMessage: String(body.whatsappMessage ?? ""),
     whatsappCatalogueUrl: String(body.whatsappCatalogueUrl ?? ""),
     flowerBedsYoutubeUrl: String(body.flowerBedsYoutubeUrl ?? ""),
+    snbsPlaylistUrl: String(body.snbsPlaylistUrl ?? ""),
     nav,
     footerTagline: String(body.footerTagline ?? ""),
   };

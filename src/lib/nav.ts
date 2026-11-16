@@ -9,7 +9,7 @@ export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Who We Are", href: "/who-we-are", match: "/who-we-are" },
   { label: "Recycling Green Waste", href: "/recycling-green-waste" },
-  { label: "Say No to Bare Soil", href: "/say-no-to-bare-soil" },
+  { label: "Organic Soil Cover", href: "/organic-soil-cover" },
   { label: "Greening Urban Spaces", href: "/greening-urban-spaces" },
   { label: "Blog", href: "/blog" },
 ];

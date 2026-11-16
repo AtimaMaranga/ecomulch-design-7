@@ -45,6 +45,7 @@ export default async function DashboardPage() {
     },
     { ok: settings.whatsappCatalogueUrl !== SEED_SETTINGS.whatsappCatalogueUrl, label: "WhatsApp catalogue link" },
     { ok: settings.flowerBedsYoutubeUrl !== SEED_SETTINGS.flowerBedsYoutubeUrl, label: "Flower beds video link" },
+    { ok: Boolean(settings.snbsPlaylistUrl?.trim()), label: "Say No to Bare Soil YouTube playlist link" },
     { ok: published >= 1, label: "At least one published blog article" },
   ];
   const todo = checklist.filter((c) => !c.ok).length;

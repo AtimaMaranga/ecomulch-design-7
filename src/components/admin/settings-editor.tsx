@@ -136,6 +136,12 @@ export function SettingsEditor({ settings }: { settings: SiteSettings }) {
             value={s.flowerBedsYoutubeUrl}
             onChange={(v) => set("flowerBedsYoutubeUrl", v)}
           />
+          <Field
+            label="Say No to Bare Soil YouTube playlist link"
+            help="The campaign page shows its “Explore Our YouTube Playlist” button once this is filled in."
+            value={s.snbsPlaylistUrl ?? ""}
+            onChange={(v) => set("snbsPlaylistUrl", v)}
+          />
         </Card>
 
         <Card title="Footer & social links">

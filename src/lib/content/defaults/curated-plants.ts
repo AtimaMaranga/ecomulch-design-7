@@ -1,116 +1,87 @@
+/*
+ * Curated Indoor & Patio Plants. Rebuilt in November 2026 as one scrolling
+ * page from the client's three-part mockup: introduction and challenges, our
+ * approach, and what we offer. Section keys were renamed with the rebuild so
+ * older saved copies can't override it.
+ */
 export const CURATED_PLANTS = {
-  hero: {
+  intro: {
     _label: "Hero",
-    image: "/images/cp2-hero.jpg",
-    imageAlt: "Trailing and flowering plants in terracotta pots by a sunny window",
-    title: "Curated Indoor &",
-    titleAccent: "Patio Plants",
-    subtitle: "Beautiful plants. Thoughtful combinations.\nReady for your space.",
+    eyebrow: "Greening Urban Spaces",
+    title: "Curated Indoor & Patio Plants",
     paras: [
-      "Bringing a plant home is only part of the story. A successful container plant depends on choosing the right plant, creating a supportive growing environment and giving it time to establish.",
-      "At EcoMulch, we select, prepare, nurture and curate plants for indoor spaces, patios, balconies and other spaces around the home — making it easier to bring more living green into your everyday surroundings.",
+      "As our towns and cities become more built up, many homes have little or no ground available for planting. But that doesn’t mean there are no opportunities for greenery. Indoor spaces, patios, balconies, windowsills and walls can all accommodate plants grown in containers.",
+      "Many people are already growing plants in containers at home. But doing so successfully comes with its own set of challenges.",
     ],
+    image: "/images/cp3-hero.jpg",
+    imageAlt: "Flowering pots, foliage plants and a hanging basket on a sunny balcony",
   },
-  stages: {
-    _label: "What goes into our curated plants (Learn More cards)",
-    title: "See What Goes Into Our",
-    titleAccent: "Curated Plants",
-    lede: "A successful container plant involves more than just a plant. We bring together several elements to create plants that are healthy, attractive and ready to be part of your space.",
+  challenges: {
+    _label: "Common challenges",
+    title: "Some of the challenges we commonly encounter include:",
     items: [
-      {
-        _tone: "mint", icon: "leaf-outline", title: "Select", kicker: "Start with the right plant.",
-        body: "Choose healthy plants suited to different spaces and growing conditions around the home.",
-        detail: {
-          image: "/images/cp2-select.jpg", imageAlt: "Young potted plants lined up on a wooden bench",
-          title: "Select", subtitle: "Start With the Right Plant",
-          lead: "There are many plants to choose from. The challenge is knowing which ones make sense for your space.",
-          paras: ["At EcoMulch, selection starts before a plant becomes part of our collection. We research different plants, learn about their characteristics and growing requirements, and consider where and how they can work around the home. We also source carefully, looking for healthy plants that give us a good starting point for the preparation, establishment and care that follows."],
-          points: [
-            { _tone: "mint", icon: "scan", title: "Understand the Plant", body: "Learn its characteristics, growing requirements and how it develops over time." },
-            { _tone: "sky", icon: "house", title: "Match Plant to Purpose", body: "Consider whether it is suited to indoor spaces, patios, balconies, hanging displays or other parts of the home." },
-            { _tone: "peach", icon: "sprout", title: "Start With a Healthy Plant", body: "Source plants that are healthy and well grown, and ready to transition into their next growing environment." },
-          ],
-          footer: "The result is a collection built around considered choices — not simply what happens to be available.",
-        },
-      },
-      {
-        _tone: "peach", icon: "plants", title: "Prepare", kicker: "Create a better growing environment.",
-        body: "Pair plants with appropriate containers and supportive growing media.",
-        detail: {
-          image: "/images/cp2-prepare.jpg", imageAlt: "Hands repotting a plant into a patterned ceramic pot",
-          title: "Prepare", subtitle: "Create a Better Growing Environment",
-          lead: "A healthy container plant needs more than a bigger pot. It needs the right environment for its roots.",
-          paras: [
-            "When plants arrive from the nursery, we repot them into containers suited to their next stage of growth and to the spaces where they will eventually live.",
-            "We use a growing media built around coco peat recovered from green coconut husks (madafu) through our Recycling Green Waste work. Coco peat provides a lightweight base that holds moisture while supporting aeration and drainage. We blend it with other ingredients to add nutrients and create a healthy root environment for each plant.",
-            "We also consider the container itself — its suitability for the plant, the space it will occupy and how the finished plant will be presented in your home.",
-          ],
-          points: [
-            { _tone: "peach", icon: "plants", title: "Create Room to Grow", body: "We move plants from their nursery containers into appropriately sized containers for their next stage of growth." },
-            { _tone: "mint", icon: "leaf-outline", title: "Build a Better Root Environment", body: "We use our coco-peat-based growing media, blended with other ingredients, to support moisture retention, aeration, drainage and plant nutrition." },
-            { _tone: "sky", icon: "leaf", title: "Pair Plant & Container", body: "We choose containers that work for the plant while also preparing it to become an attractive part of your living space." },
-          ],
-          footer: "The result is a plant that arrives already repotted, established in a considered growing environment and ready for the next stage of its life in your home.",
-        },
-      },
-      {
-        _tone: "sky", icon: "leaf-outline", title: "Nurture", kicker: "Give plants time to establish.",
-        body: "Allow plants to adjust and thrive before they reach your home.",
-        detail: {
-          image: "/images/cp2-nurture.jpg", imageAlt: "Ferns and foliage plants settling in on a sheltered shelf",
-          title: "Nurture", subtitle: "Give Plants Time to Establish",
-          lead: "We don’t want to send a plant home simply because it looks good today. We want to give it a better chance of continuing to thrive once it gets there.",
-          paras: [
-            "After repotting, we give our plants time to settle into their new containers and growing environment. During this period, we observe how they respond, watch for problems and allow them time to establish before they become part of our collection.",
-            "We nurture plants in environments similar to the places they are being prepared for — whether indoors, on a patio or in another sheltered space around the home — rather than keeping them in intensive nursery conditions.",
-            "What we learn while nurturing each plant also helps us provide practical guidance for caring for it once it reaches your home.",
-          ],
-          points: [
-            { _tone: "mint", icon: "leaf-outline", title: "Allow Time to Establish", body: "Repotting is a change. We give plants time to settle into their new containers and growing media before sending them to a new home." },
-            { _tone: "peach", icon: "eye", title: "Observe How They Respond", body: "We monitor plant health and look for signs of stress or other issues, addressing them before they become part of the collection." },
-            { _tone: "sky", icon: "house", title: "Prepare for Home Life", body: "We care for plants in conditions that reflect where they are intended to live, helping them adapt to real home environments." },
-          ],
-          footer: "The goal is a plant that isn’t simply beautiful on the day you buy it, but one that has been given time to establish and is better prepared for the transition into your home.",
-        },
-      },
-      {
-        _tone: "lilac", icon: "sparkles", title: "Curate", kicker: "Bring plants together for your space.",
-        body: "Create individual plants and coordinated combinations suited to different parts of the home.",
-        detail: {
-          image: "/images/cp2-curate.jpg", imageAlt: "Potted plants and a hanging trailing plant grouped beside a patio chair",
-          title: "Curate", subtitle: "Bring Plants Together for Your Space",
-          lead: "Choosing a good plant is one thing. Knowing how plants can become part of your home is another.",
-          paras: [
-            "Our curation starts with the space. We consider where plants could work around your home, the conditions they will experience and the kind of effect you would like to create. From there, we can suggest individual plants, combinations or collections that make sense for that setting.",
-            "That might mean one plant for a particular corner, several plants together as a coordinated group, or gradually building a collection across your home over time.",
-          ],
-          points: [
-            { _tone: "mint", icon: "house", title: "Match Plants to Spaces", body: "We think about where different plants are likely to work — from indoor spaces and windowsills to patios, balconies and other areas around the home." },
-            { _tone: "peach", icon: "leaf-outline", title: "Create Thoughtful Combinations", body: "Plants don’t always have to stand alone. We can bring plants together in combinations that complement one another and work with the character and style of your space." },
-            { _tone: "sky", icon: "refresh", title: "Let Your Collection Evolve", body: "Your home — and your plants — will change over time. We can help you add, replace or rotate plants as seasons change, plants mature or you simply want to refresh a space." },
-          ],
-          footer: "You don’t have to create your entire plant collection at once. We can help you build it thoughtfully over time.",
-        },
-      },
+      { _tone: "mint", _color: "green", icon: "leaf-pair", title: "Finding the Right Plants", body: "With so many choices at nurseries, it can be overwhelming to find plants that suit your space and growing conditions." },
+      { _tone: "peach", _color: "green", icon: "potted-plant", title: "Creating Suitable Growing Conditions", body: "Container plants depend on the right container, growing media, drainage, watering and nutrients to thrive." },
+      { _tone: "sky", _color: "green", icon: "house-outline", title: "Finding Space and Making It Work", body: "Identifying where plants can go and how to display them — including containers, hooks or brackets — can be a challenge, especially in limited spaces." },
+      { _tone: "lilac", _color: "purple", icon: "hand-sprout", title: "Helping Plants Establish and Thrive", body: "Plants may look healthy at the nursery but struggle after being brought home. Repotting, changes in light and ongoing care can all affect their success." },
     ],
   },
-  collection: {
-    _label: "Plant collection",
-    title: "Explore Our Curated",
-    titleAccent: "Plant Collection",
-    lede: "Our collection includes a variety of plants and arrangements for different spaces and needs. Availability changes over time, so visit our WhatsApp catalogue to see what’s currently available.",
-    items: [
-      { image: "/images/cp2-indoor.jpg", imageAlt: "A peace lily and foliage plants in pots indoors", title: "Indoor Plants", body: "Plants carefully selected and prepared for indoor living spaces." },
-      { image: "/images/cp2-patio.jpg", imageAlt: "A pot of red flowers on a patio beside a striped cushion", title: "Patio & Balcony Plants", body: "Container plants for patios, balconies, entrances and other outdoor living spaces." },
-      { image: "/images/cp2-hanging.jpg", imageAlt: "A hanging basket of purple, white and red flowers", title: "Hanging Flower Baskets", body: "Curated flowering and foliage combinations designed for hanging display." },
-      { image: "/images/cp2-succulent.jpg", imageAlt: "A group of potted succulents", title: "Succulent Collections", body: "Small, carefully composed succulent arrangements and collections." },
+  approach: {
+    _label: "Our approach",
+    eyebrow: "Growing Greenery in Urban Spaces",
+    title: "Our Approach",
+    body: "At EcoMulch, we take a practical, step-by-step approach to introducing and sustaining greenery in the constrained spaces of urban homes. It is our response to the common challenges of choosing, preparing, growing and caring for plants in containers.",
+    image: "/images/cp3-approach.jpg",
+    imageAlt: "A hanging flower basket, potted plants and wall-mounted planters on a balcony",
+    stepsTitle: "A thoughtful, six-step approach",
+    stepsLede: "To address the challenges of growing plants in containers, we consider a complete process — from finding opportunities for greenery to helping you care for your plants over time.",
+    steps: [
+      { _tone: "mint", _color: "green", icon: "house-outline", title: "Identify Opportunities", body: "Explore where greenery can be introduced in indoor spaces, patios, balconies, walls and other areas with little or no ground." },
+      { _tone: "peach", _color: "green", icon: "leaf-pair", title: "Select & Curate", body: "Choose suitable plants and develop thoughtful combinations based on growing conditions, form and appearance." },
+      { _tone: "sky", _color: "green", icon: "potted-plant", title: "Source & Propagate", body: "Source healthy plants or propagate our own to obtain suitable planting material." },
+      { _tone: "mint", _color: "green", icon: "trowel", title: "Prepare & Nurture", body: "Choose practical containers and suitable growing media, then pot and nurture plants as they establish." },
+      { _tone: "lilac", _color: "purple", icon: "flower-stem", title: "Place & Present", body: "Consider placement, arrangements, supports, installation and finishing touches for attractive, practical displays." },
+      { _tone: "cream", _color: "green", icon: "hand-sprout", title: "Guide & Steward", body: "Provide plant care guidance and help you maintain, refresh or replace your plants when needed." },
     ],
   },
-  available: {
-    _label: "See what’s available (WhatsApp catalogue)",
-    title: "See What’s Available Now",
-    body: "Our plant collection evolves as we work with different plants, containers and combinations. Visit our WhatsApp catalogue to see what is currently available.",
-    cta: "View Our Plant Collection\non WhatsApp",
+  offer: {
+    _label: "What we offer",
+    eyebrow: "Container Plants for Urban Spaces",
+    title: "What We Offer",
+    lede: "Bring more greenery into your home with thoughtfully curated plants and practical solutions for displaying them. Choose from our available collections designed for urban spaces, with optional professional installation for selected plants and arrangements.",
+  },
+  primary: {
+    _label: "Our primary offering",
+    label: "Our Primary Offering",
+    title: "Curated Indoor & Patio Plants",
+    body: "Choose from our selection of indoor plants, patio and balcony plants, hanging flower baskets and cute little succulents. Our plants are thoughtfully selected, prepared and nurtured for urban environments, and are available individually or in coordinated collections.",
+    cta: "Explore Our Plants and Collections",
     ctaHref: "{catalogue}",
+    features: [
+      { icon: "sprout", text: "Individual plants or collections" },
+      { icon: "truck", text: "Delivery to your home" },
+      { icon: "document", text: "Care guidance included" },
+    ],
+    items: [
+      { image: "/images/cp3-indoor.jpg", imageAlt: "Leafy indoor plants in white pots", title: "Indoor Plants", body: "Bring natural beauty into your living spaces." },
+      { image: "/images/cp3-patio.jpg", imageAlt: "Flowering plants in terracotta pots on a patio", title: "Patio & Balcony Plants", body: "Add colour and life to your outdoor spaces." },
+      { image: "/images/cp3-hanging.jpg", imageAlt: "A hanging basket of pink flowers", title: "Hanging Flower Baskets", body: "Make the most of overhead and vertical spaces." },
+      { image: "/images/cp3-succulents.jpg", imageAlt: "Small succulents in square pots", title: "Cute Little Succulents", body: "Small plants with big possibilities for urban homes." },
+    ],
+  },
+  install: {
+    _label: "Additional service: installation",
+    label: "Additional Service",
+    title: "Professional Plant Installation",
+    body: "For selected plants and arrangements that need to be mounted or hung, we offer professional installation to help you display them safely and attractively. This service is available for plants purchased from EcoMulch and is quoted separately based on your location and installation requirements.",
+    image: "/images/cp3-install.jpg",
+    imageAlt: "A hanging basket of pink flowers on a wall bracket",
+    points: [
+      { icon: "wrench", text: "Installation for hanging baskets and wall-mounted arrangements" },
+      { icon: "map-pin", text: "Quoted based on your location, number of plants and requirements" },
+      { icon: "shield", text: "Professional and careful installation" },
+    ],
+    cta: "Ask About Installation",
+    ctaHref: "{whatsapp}",
   },
 };

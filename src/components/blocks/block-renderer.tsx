@@ -713,6 +713,7 @@ function BlockView({ block, ctx }: { block: Block; ctx: RenderContext }) {
           heading={s(d.heading)}
           intro={s(d.intro)}
           cards={list<Record<string, string>>(d.cards).map((c) => ({
+            group: c.group || "",
             image: c.image || "/images/home-work-soil-clean.jpg",
             imageAlt: c.imageAlt || "",
             title: c.title || "",

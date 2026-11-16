@@ -9,13 +9,14 @@ const explore = [
   { label: "Home", href: "/" },
   { label: "Who We Are", href: "/who-we-are" },
   { label: "Recycling Green Waste", href: "/recycling-green-waste" },
-  { label: "Say No to Bare Soil", href: "/say-no-to-bare-soil" },
+  { label: "Organic Soil Cover", href: "/organic-soil-cover" },
   { label: "Greening Urban Spaces", href: "/greening-urban-spaces" },
   { label: "Blog", href: "/blog" },
 ];
 
 const solutions = [
-  { label: "Mulching Solutions", href: "/say-no-to-bare-soil/our-response/mulching-your-home" },
+  { label: "Organic Mulches", href: "/organic-soil-cover/our-response/organic-mulches" },
+  { label: "Planter Toppings", href: "/organic-soil-cover/our-response/planter-toppings" },
   { label: "Flower Bed Transformations", href: "/greening-urban-spaces/what-we-offer/flower-beds" },
   { label: "Indoor & Patio Plants", href: "/greening-urban-spaces/what-we-offer/curated-plants" },
 ];

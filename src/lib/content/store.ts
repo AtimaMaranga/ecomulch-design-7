@@ -21,7 +21,21 @@ export async function savePage(page: Page): Promise<void> {
 
 export async function getSettings(): Promise<SiteSettings> {
   const saved = await getRepository().getSettings();
-  return saved ?? SEED_SETTINGS;
+  const s = saved ? { ...SEED_SETTINGS, ...saved } : SEED_SETTINGS;
+  return { ...s, nav: renamePillars(s.nav) };
+}
+
+/**
+ * November 2026: "Say No to Bare Soil" became a campaign inside the new
+ * "Organic Soil Cover" pillar. Menus saved before the change still carry the
+ * old item, so swap it for the new pillar wherever it appears.
+ */
+function renamePillars(nav: SiteSettings["nav"]): SiteSettings["nav"] {
+  return (nav ?? []).map((n) =>
+    (n.href ?? "").replace(/\/$/, "") === "/say-no-to-bare-soil"
+      ? { ...n, label: "Organic Soil Cover", href: "/organic-soil-cover" }
+      : n,
+  );
 }
 
 export async function saveSettings(settings: SiteSettings): Promise<void> {
@@ -73,5 +87,6 @@ export async function linkSettings() {
     whatsappCatalogueUrl: s.whatsappCatalogueUrl,
     youtubeUrl: s.youtubeUrl,
     flowerBedsYoutubeUrl: s.flowerBedsYoutubeUrl,
+    snbsPlaylistUrl: s.snbsPlaylistUrl ?? "",
   };
 }

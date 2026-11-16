@@ -43,6 +43,8 @@ export type SiteSettings = {
   whatsappMessage: string;
   whatsappCatalogueUrl: string;
   flowerBedsYoutubeUrl: string;
+  /** Say No to Bare Soil YouTube playlist (campaign page button hides while empty). */
+  snbsPlaylistUrl?: string;
   nav: LinkValue[];
   footerTagline: string;
   /** Footer "Get in Touch" — leave blank to hide a line (never publish example details). */

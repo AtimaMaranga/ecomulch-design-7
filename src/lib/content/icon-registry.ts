@@ -56,6 +56,15 @@ import {
   Waves,
   Droplet,
   SquarePlay,
+  Wallet,
+  Package,
+  Calculator,
+  ClipboardCheck,
+  Megaphone,
+  Youtube,
+  CircleCheck,
+  Wrench,
+  Home as HomeIcon,
   type LucideIcon,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
@@ -90,6 +99,12 @@ import {
   LeafPairIcon,
   BareSoilIcon,
   TrowelIcon,
+  GrassIcon,
+  CoconutIcon,
+  PineConeIcon,
+  FiberCoilIcon,
+  BarkSlabIcon,
+  SackIcon,
   type IconComponent,
 } from "@/components/icons";
 
@@ -179,6 +194,21 @@ export const ICONS: Record<string, AnyIcon> = {
   trowel: TrowelIcon,
   video: SquarePlay,
   whatsapp: WhatsAppIcon as unknown as IconComponent,
+  grass: GrassIcon,
+  coconut: CoconutIcon,
+  "pine-cone": PineConeIcon,
+  "fiber-coil": FiberCoilIcon,
+  "bark-slab": BarkSlabIcon,
+  sack: SackIcon,
+  wallet: Wallet,
+  package: Package,
+  calculator: Calculator,
+  "clipboard-check": ClipboardCheck,
+  megaphone: Megaphone,
+  youtube: Youtube,
+  "circle-check": CircleCheck,
+  wrench: Wrench,
+  "house-outline": HomeIcon,
 };
 
 export const DEFAULT_ICON = "leaf";

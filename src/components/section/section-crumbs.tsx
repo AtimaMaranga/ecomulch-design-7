@@ -52,7 +52,7 @@ export function SectionCrumbs({
     };
   }, [sections]);
 
-  const back = items.find((i) => i.href)?.href ?? "/";
+  const back = [...items].reverse().find((i) => i.href)?.href ?? "/";
   const last = items.length - 1;
 
   return (
@@ -60,11 +60,11 @@ export function SectionCrumbs({
       aria-label="Breadcrumb"
       className="sticky top-[var(--header-h)] z-40 border-b border-brand-100/70 bg-wash-mint/95 backdrop-blur"
     >
-      <ol className="container-site flex min-h-[2.75rem] items-center gap-2 py-2 text-[0.92rem] font-800 text-brand-700 sm:gap-3 sm:text-[1rem]">
+      <ol className="container-site flex min-h-[2.75rem] flex-wrap items-center gap-x-2 gap-y-0.5 py-2 text-[0.88rem] font-800 text-brand-700 sm:gap-3 sm:text-[1rem]">
         <li className="flex">
           <Link
             href={back}
-            aria-label={`Back to ${items[0]?.label ?? "previous page"}`}
+            aria-label={`Back to ${[...items].reverse().find((i) => i.href)?.label ?? "previous page"}`}
             className="-ml-1 grid h-8 w-8 place-items-center rounded-full transition-colors hover:bg-brand-100"
           >
             <ArrowLeft className="h-5 w-5" strokeWidth={2.2} />
@@ -85,20 +85,29 @@ export function SectionCrumbs({
             </>
           );
           return (
-            <li key={i} className="flex min-w-0 items-center gap-2 sm:gap-3">
-              {i > 0 && <ChevronRight aria-hidden="true" className="h-4 w-4 shrink-0 text-pine-deep" strokeWidth={2.4} />}
+            <li
+              key={i}
+              className={`min-w-0 items-center gap-2 sm:flex sm:gap-3 ${i < last - 1 ? "hidden" : "flex"}`}
+            >
+              {i > 0 && (
+                <ChevronRight
+                  aria-hidden="true"
+                  className={`h-4 w-4 shrink-0 text-pine-deep ${i === last - 1 ? "hidden sm:block" : ""}`}
+                  strokeWidth={2.4}
+                />
+              )}
               {isPage ? (
                 active && topId ? (
-                  <a href={`#${topId}`} className="truncate transition-colors hover:text-brand-500">
+                  <a href={`#${topId}`} className="transition-colors hover:text-brand-500">
                     {label}
                   </a>
                 ) : (
-                  <span aria-current="page" className="truncate">
+                  <span aria-current="page">
                     {label}
                   </span>
                 )
               ) : (
-                <Link href={c.href ?? "/"} className="truncate transition-colors hover:text-brand-500">
+                <Link href={c.href ?? "/"} className="transition-colors hover:text-brand-500">
                   {label}
                 </Link>
               )}
@@ -108,7 +117,7 @@ export function SectionCrumbs({
         {active && (
           <li className="hidden min-w-0 items-center gap-3 lg:flex">
             <ChevronRight aria-hidden="true" className="h-4 w-4 shrink-0 text-pine-deep" strokeWidth={2.4} />
-            <span aria-current="location" className="truncate">
+            <span aria-current="location">
               {active.label}
             </span>
           </li>

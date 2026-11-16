@@ -4,7 +4,6 @@ import { ArrowRight } from "lucide-react";
 import { LeafPairIcon } from "@/components/icons";
 import {
   BigTitle,
-  ExploreStrip,
   IconDisc,
   IntroHero,
   SmartLink,
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
 const BODY = "text-[1.02rem] leading-[1.5] text-pine-deep/85 sm:text-[1.08rem] xl:text-[1.15rem]";
 
 export default async function UrbanGreeningChallengePage() {
-  const { intro, explore, growing, needs, response } = await getPageContent(
+  const { intro, growing, needs, response } = await getPageContent(
     "greening-urban-spaces--the-challenge",
     GUS_CHALLENGE,
   );
@@ -52,7 +51,7 @@ export default async function UrbanGreeningChallengePage() {
         image={intro.image}
         mobileImage={intro.mobileImage || undefined}
         imageAlt={intro.imageAlt}
-        photo="edge"
+        photo="fade"
         mobileAspect="aspect-[732/301]"
       >
         {intro.paras.map((p, i) => (
@@ -60,16 +59,8 @@ export default async function UrbanGreeningChallengePage() {
         ))}
       </IntroHero>
 
-      <div className="pt-5 lg:pt-0">
-        <ExploreStrip
-          title={explore.title}
-          lede={explore.lede}
-          options={explore.options.map((o) => ({ icon: ic(o.icon), title: o.title, href: o.href, tone: o._tone }))}
-        />
-      </div>
-
       {/* Where we grow plants */}
-      <section id="where-we-grow-plants" className="below-crumbs pt-12 lg:pt-16">
+      <section id="where-we-grow-plants" className="below-crumbs pt-9 lg:pt-11">
         <div className="container-site">
           <BigTitle>{growing.title}</BigTitle>
           <TitleRule className="mt-4" />
